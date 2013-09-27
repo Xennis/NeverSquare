@@ -1,13 +1,10 @@
 window.onload = function() {
-	// Creates canvas 320 × 200 at 10, 50
-	var paper = Raphael(document.getElementById("canvas_container"), 500, 400);
+	var canvas = document.getElementById("canvas_container");
+	var paper = Raphael(canvas, 500, 400);
+	
+	var triangle = paper.path('M 50 0 L 100 100 L 0 100 Z');
+	triangle.node.onclick = function() {
+		triangle.attr('fill', 'red');
+	}
 
-	// Creates circle at x = 50, y = 40, with radius 10
-	var circle = paper.circle(50, 40, 10);
-
-	// Sets the fill attribute of the circle to red (#f00)
-	circle.attr("fill", "#f00");
-
-	// Sets the stroke attribute of the circle to white
-	circle.attr("stroke", "#fff");
 }
