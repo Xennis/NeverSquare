@@ -18,36 +18,56 @@ window.onload = function() {
 	//circle.attr("stroke", "#fff");
 	//rec.attr("stroke", "#f0f");
 	
-	var p1 = paper.path("M10,10L10,120L120,120L120,10Z");
-	var p2 = paper.path("M10,110L10,230L120,230L120,120Z");
+	/*var p2 = paper.path("M10,110L10,230L120,230L120,120Z");
 	var p3 = paper.path("M120,30L230,10L230,120L120,100Z");
 	var p4 = paper.path("M120,120L230,120L230,230L120,230Z");
-	p1.attr({fill: "red"});
+
 	p2.attr({fill: "green", opacity:0.5});
 	p3.attr({fill: "blue"});
 	p4.attr({fill: "yellow"});
+*/
+	var points = window.BOARD.buildBoard()
+	jQuery.each(points, function(index, svgString){
+		var shape = paper.path(svgString);
+		shape.attr({fill: "red"});
+	});
+
 
 	paper.forEach(function(el){
 		paper.forEach(function(ab){
-			if(el===ab){return true;}
+			if(el===ab){
+				return true;
+			}
 			var intersections = Raphael.pathIntersection(el.attr('path'), ab.attr('path'));
 			intersections = getUniquePoints(intersections);
+			//console.log(intersections);
 			if(intersections.length>2){
-					console.log(el.attr('fill') + ab.attr('fill'));
+			//		console.log(el.attr('fill') + ab.attr('fill'));
 			}
 		})
-
-
-	})
+	});
 	//test 
 	function getUniquePoints(intersections){
-		
 		return intersections;
+		var filtered_intersections = [];
+
+		jQuery.each(intersections, function(index, value){
+			var point = {
+				x: Math.round(value.x),
+				y: Math.round(value.y)
+			}
+
+			if ( ! jQuery.inArray(point, filtered_intersections)) {
+				filtered_intersections.push(point);
+			}
+			//console.log(filtered_intersections);
+		});
+		return filtered_intersections;
 
 	}
 	
 	var bool = p3.isPointInside(121,50);
-	console.log(Raphael.pathIntersection(p3.attr('path'),p4.attr('path')));
+	//console.log(Raphael.pathIntersection(p3.attr('path'),p4.attr('path')));
 
 	p1.click(function (evt){
 		//p1.attr({fill:"black"});
