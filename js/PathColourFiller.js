@@ -1,6 +1,5 @@
 var PathColourFiller = function(item, colorIn, colorClick, colorOut, onClickCallback) {
 	var self = this;
-	this.finder = new PathNeighbourFinder(paper);
 
 	this.fin = function(ev) {
 		if (!self.clicked) {
