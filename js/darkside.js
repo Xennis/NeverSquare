@@ -39,7 +39,7 @@ window.onload = function() {
 
 
 	})
-
+	//test
 	function getUniquePoints(intersections){
 		
 		return intersections;
