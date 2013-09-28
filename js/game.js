@@ -5,8 +5,14 @@ window.GAME = function() {
 		jQuery("#timeOut").show();
 	}
 
-	function completeHtml(){
+	function jQuerySetEvents(){
+		jQuery("#restart").click(function(event){
+			jQuery("#overlay").hide();
+			GAME.board.resetBoard();
+		})
+	}
 
+	function completeHtml(){
 
 	}
 
@@ -24,7 +30,10 @@ window.GAME = function() {
 		},
 
 		start: function () {
-		    this.board.buildBoard();            
+			jQuerySetEvents();
+
+			//this.board.clearBoard();
+		    this.board.buildBoard();
         },
 
 
