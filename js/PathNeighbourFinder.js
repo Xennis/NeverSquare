@@ -1,14 +1,6 @@
 var PathNeighbourFinder = function(paper) {
 	var self = this;
 
-	this.unique = function(arr, key) {
-		var seen = {};
-		return arr.filter(function(elem) {
-			var k = key(elem);
-			return (seen[k] === 1) ? 0 : seen[k] = 1;
-		});
-	}
-
 	this.pointKey = function(x,y) {
 		return ""+x+","+y;
 	}
@@ -32,7 +24,7 @@ var PathNeighbourFinder = function(paper) {
 					points.push([x, y]);
 				}
 
-				var uniquePoints = self.unique(points, function(point) {
+				var uniquePoints = makeArrayset(points, function(point) {
 					return self.pointKey(point[0], point[1]);
 				});
 

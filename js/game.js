@@ -4,7 +4,7 @@ window.GAME = (function (jQuery){
 		settings: {
 			height: 600,
 			width: 800,
-			numShapes: 4
+			numShapes: 10
 		}
 	}
 
