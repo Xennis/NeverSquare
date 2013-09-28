@@ -11,8 +11,8 @@ GAME.player = function() {
 
 	return {
 
-		init: function() {
-			this.name = "default";
+		init: function(name) {
+			this.name = name;
 			this.level = 1;
 			this.score = 0;
 			this.tries = 0;
@@ -23,6 +23,7 @@ GAME.player = function() {
 			htmlSpades.text(GAME.settings.numShapes);
 			htmlScores = $('#scoreNumber');
 			htmlScores.text(this.score);
+			$('#play_screen #playerName').text(this.name);
 		},
 
 		completeLevel: function() {

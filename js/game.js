@@ -9,13 +9,23 @@ window.GAME = function() {
 
 	function jQuerySetEvents(){
 		jQuery("#restart").click(function(event){
-			jQuery("#overlay").hide();
+			jQuery("#overlay").hide().val;
+
 			GAME.board.resetBoard();
+		}),
+		jQuery("#start").click(function(event){
+			var player_name = jQuery("#playerName").val();
+			GAME.player.init(player_name);
+			jQuery("#start_screen").hide();
+			jQuery("#play_screen").show();
+			GAME.start();
 		})
 	}
 
 	function completeHtml(){
-
+		jQuery("#timeOut").hide();
+		jQuery("#complete").show();
+		jQuery("#score").html("Score: " + GAME.player.score);
 	}
 
 	function randomColor() {
@@ -44,10 +54,12 @@ window.GAME = function() {
 			GAME.player.init();
 			//Call random color to get the first color
 			randomColor();
+			jQuerySetEvents();
+			jQuery("#play_screen").hide();
 		},
 
 		start: function () {
-			jQuerySetEvents();
+			
 
 			//this.board.clearBoard();
 		    this.board.buildBoard();
@@ -63,9 +75,10 @@ window.GAME = function() {
 		completeLevel: function () {
 			GAME.timer.toggle();
 			GAME.player.completeLevel();
+			completeHtml();
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-			this.start();
+			//this.start();
 
 		},
 
