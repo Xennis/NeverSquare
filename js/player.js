@@ -3,6 +3,7 @@ GAME.player = function() {
 	var name;
 	var level;
 	var score;
+	var scoreLastGame;
 	var tries;
 
 	var htmlLevel;
@@ -15,6 +16,7 @@ GAME.player = function() {
 			this.name = name;
 			this.level = 1;
 			this.score = 0;
+			this.scoreLastGame = 0;
 			this.tries = 0;
 
 			htmlLevel = $('#levelNumber');
@@ -30,7 +32,8 @@ GAME.player = function() {
 			//var time = GAME.timer.getCurrentTime();
 			//var score = time*this.settings.numShapes*this.settings.scoreMod;
 			var time = GAME.timer.getCurrentTime();
-			this.score += time * GAME.settings.numShapes * GAME.settings.scoreMod;
+			this.scoreLastGame = time * GAME.settings.numShapes * GAME.settings.scoreMod;
+			this.score += this.scoreLastGame;
 			this.level++;
 			this.tries = 0;
 	        

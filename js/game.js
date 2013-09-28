@@ -29,12 +29,23 @@ window.GAME = function() {
 		jQuery("#colorPreview").click(function(){
 			GAME.randomColor();
 		});
+		jQuery("body").keyup(function(event){
+			if (event.which === 68) {
+				colorIndex = colorIndex === 4 ? 0 : colorIndex + 1;	
+			}
+			if (event.which === 65) {
+				colorIndex = colorIndex === 0 ? 4 : colorIndex - 1;
+			}
+			console.log(colorIndex);
+			GAME.randomColor();
+			event.preventDefault();
+		});
 	}
 
 	function completeHtml(){
 		jQuery("#timeOut").hide();
 		jQuery("#complete").show();
-		jQuery("#score").html("Score: " + GAME.player.score);
+		jQuery("#score").html("Score: " + GAME.player.scoreLastGame);
 	}
 
 	return {
@@ -56,6 +67,7 @@ window.GAME = function() {
 			GAME.player.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
+				colorIndex = getRandomColorIndex();
 				GAME.randomColor();
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
 			}());
@@ -92,7 +104,6 @@ window.GAME = function() {
 		},
 
 		randomColor: function () {
-			colorIndex = getRandomColorIndex();
     		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
 		},
 
