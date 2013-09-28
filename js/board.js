@@ -44,7 +44,7 @@ GAME.board = (function (jQuery){
 					shape.isCorrect = false;
 					shape.attr({fill: "#ddd"});
 					var colorIndex = getRandomColorIndex();
-					new PathColourFiller(shape, window.GAME.settings.hoverColors[colorIndex], window.GAME.settings.colors[colorIndex], "#ffffff", function(item) {
+					new PathColourFiller(shape, window.GAME.settings.hoverColors[colorIndex], window.GAME.settings.colors[colorIndex], "#ddd", function(item) {
             		BOARD.checkBoard(item);
         		}).apply();
 			});
