@@ -6,9 +6,8 @@ var VoronoiDemo = {
 	bbox: {xl:0,xr:800,yt:0,yb:600},
 	lastCell: undefined,
 
-	generateShapes: function() {
-		var n = 6;
-		this.randomSites(n,true,this.bbox.xr,this.bbox.yb);
+	generateShapes: function(numShapes) {
+		this.randomSites(numShapes,true,this.bbox.xr,this.bbox.yb);
 
 		var shapes = this.getShapes();
 		console.log(shapes);
@@ -16,7 +15,7 @@ var VoronoiDemo = {
 		},
 
 
-	randomSites: function(n,clear,width,height) {
+	randomSites: function(numShapes,clear,width,height) {
 		if (clear) {this.sites = [];}
 		// create vertices
 		var xmargin = width*this.margin,
@@ -25,7 +24,7 @@ var VoronoiDemo = {
 			dx = width-xmargin*2,
 			yo = ymargin,
 			dy = height-ymargin*2;
-		for (var i=0; i<n; i++) {
+		for (var i=0; i<numShapes; i++) {
 			this.sites.push({x:self.Math.round((xo+self.Math.random()*dx)*10)/10,y:self.Math.round((yo+self.Math.random()*dy)*10)/10});
 			}
 		this.diagram = this.voronoi.compute(this.sites, this.bbox);
