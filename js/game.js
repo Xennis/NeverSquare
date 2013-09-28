@@ -29,6 +29,10 @@ window.GAME = function() {
 			addedShapesPerLevel: 2,
 		},
 
+		init: function () {
+			GAME.player.init();
+		},
+
 		start: function () {
 			jQuerySetEvents();
 
@@ -43,7 +47,7 @@ window.GAME = function() {
 			GAME.player.failLevel();
 		},
 
-		completeLevel: function(){
+		completeLevel: function () {
 			GAME.timer.toggle();
 			GAME.player.completeLevel();
 			jQuery("#overlay").show();

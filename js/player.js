@@ -6,6 +6,8 @@ GAME.player = function() {
 	var tries;
 
 	var htmlLevel;
+	var htmlSpades;
+	var htmlScores;
 
 	return {
 
@@ -16,7 +18,11 @@ GAME.player = function() {
 			this.tries = 0;
 
 			htmlLevel = $('#levelNumber');
-			htmlLevel.text(this.level);		
+			htmlLevel.text(this.level);
+			htmlSpades = $('#spadesNumber');
+			htmlSpades.text(GAME.settings.numShapes);
+			htmlScores = $('#scoreNumber');
+			htmlScores.text(this.score);
 		},
 
 		completeLevel: function() {
@@ -28,6 +34,8 @@ GAME.player = function() {
 			this.tries = 0;
 	        
 	        htmlLevel.text(this.level);
+			htmlSpades.text(GAME.settings.numShapes);
+			htmlScores.text(this.score);
 		},
 
 		failLevel: function() {
