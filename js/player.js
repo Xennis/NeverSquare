@@ -30,7 +30,7 @@ GAME.player = function() {
 			//var time = GAME.timer.getCurrentTime();
 			//var score = time*this.settings.numShapes*this.settings.scoreMod;
 			var time = GAME.timer.getCurrentTime();
-			this.score = time * GAME.settings.numShapes * GAME.settings.scoreMod;
+			this.score += time * GAME.settings.numShapes * GAME.settings.scoreMod;
 			this.level++;
 			this.tries = 0;
 	        

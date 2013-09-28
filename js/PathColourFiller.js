@@ -4,15 +4,15 @@ var PathColourFiller = function(item, currentColor, colorOut, onClickCallback) {
 
 	this.fin = function(ev) {
 		if (!self.clicked) {
-			item.attr('fill', "rgba(0,0,0,.4)");
+			item.attr('fill', colorOut);
 		}
 	}
 
 	this.fclick = function(ev) {
 		if (self.clicked) {
-			self.clicked = false;
-			self.fin(ev);
-			return;
+			//self.clicked = false;
+			//self.fin(ev);
+			//return;
 		}
 
 		item.attr('fill', currentColor().active);

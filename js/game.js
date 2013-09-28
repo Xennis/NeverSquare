@@ -39,14 +39,14 @@ window.GAME = function() {
 
 	return {
 		settings: {
-			height: 600,
-			width: 800,
+			height: 550,
+			width: 750,
 			numShapes: 4,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
-			baseColor: "#ddd",	
-			timePerShape: 4000,
+			baseColor: "rgba(0,0,0,.4)",	
+			timePerShape: 40000,
 			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
@@ -64,7 +64,6 @@ window.GAME = function() {
 		},
 
 		start: function () {
-
 			//this.board.clearBoard();
 		    this.board.buildBoard();
 		    GAME.timer.toggle();

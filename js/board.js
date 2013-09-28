@@ -33,6 +33,7 @@ GAME.board = (function (jQuery){
 
 	return {
 		buildBoard: function () {
+			board = [];
 			var canvas = document.getElementById("canvas_container");
 			jQuery("#canvas_container").html("");
 			var xlength = 800, ylength = 600; 
@@ -72,7 +73,6 @@ GAME.board = (function (jQuery){
 			});
 
 			//check global
-			
 			paper.forEach(function (shape) {
 				boardCorrect = boardCorrect && shape.isCorrect;
 			});
