@@ -40,15 +40,15 @@ window.GAME = function() {
 		timeOut: function (){
  			timeOutHtml();
 			jQuery("#overlay").show();
-//			GAME.player.failLevel();
+			GAME.player.failLevel();
 		},
 
 		completeLevel: function(){
 			GAME.timer.toggle();
-//			GAME.player.completeLevel();
+			GAME.player.completeLevel();
 			jQuery("#overlay").show();
-//			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-//			this.start;
+			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
+			this.start();
 		}
 	}
 }();

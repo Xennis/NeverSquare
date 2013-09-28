@@ -1,12 +1,24 @@
 GAME.player = function() {
 	
-	var name = "default";
-	var level = 1;
-	var score = 0;
-	var tries = 0;
+	var name;
+	var level;
+	var score;
+	var tries;
 
 	var htmlLevel;
+
 	return {
+
+		init: function() {
+			this.name = "default";
+			this.level = 1;
+			this.score = 0;
+			this.tries = 0;
+
+			htmlLevel = $('#levelNumber');
+			htmlLevel.text(this.level);		
+		},
+
 		completeLevel: function() {
 			//var time = GAME.timer.getCurrentTime();
 			//var score = time*this.settings.numShapes*this.settings.scoreMod;
@@ -14,13 +26,12 @@ GAME.player = function() {
 			this.score = time * GAME.settings.numShapes * GAME.settings.scoreMod;
 			this.level++;
 			this.tries = 0;
-
-	        htmlLevel = $('#levelNumber');
+	        
 	        htmlLevel.text(this.level);
 		},
 
 		failLevel: function() {
-			this.tries = this.level + 1;
+			this.tries++;
 		}
 	}
 }();
