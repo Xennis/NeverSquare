@@ -7,8 +7,9 @@ window.GAME = (function (jQuery){
 			numShapes: 4
 		},
 
-        start: function () {
-            this.board.buildBoard();
+		start: function () {
+		    this.board.buildBoard();
+
 
             
         },
@@ -22,3 +23,4 @@ window.GAME = (function (jQuery){
 
 
 }(jQuery, undefined));
+
