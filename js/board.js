@@ -37,7 +37,7 @@ GAME.board = (function (jQuery){
 			var xlength = 800, ylength = 600; 
 			paper = Raphael(canvas, xlength, ylength);
 
-			shapes = shapes ? shapes : VoronoiDemo.generateShapes();
+			shapes = VoronoiDemo.generateShapes();
 			jQuery.each(shapes, createSVGString);
 			jQuery.each(board, function(index, svgString){
 					var shape = paper.path(svgString);

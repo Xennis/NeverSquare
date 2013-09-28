@@ -1,4 +1,4 @@
-window.GAME = (function (jQuery){
+window.GAME = function() {
 
 	function timeOutHtml(){
 		jQuery("#complete").hide();
@@ -14,38 +14,33 @@ window.GAME = (function (jQuery){
 		settings: {
 			height: 600,
 			width: 800,
-
-			numShapes: 20,
+			numShapes: 4,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
-			timePerShape: 1000,
-			incrementTime: 70
-
+			timePerShape: 3000,
+			incrementTime: 70,
+			addedShapesPerLevel: 2,
 		},
 
 		start: function () {
-		    this.board.buildBoard();
-
-
-            
+		    this.board.buildBoard();            
         },
 
 
 		timeOut: function (){
  			timeOutHtml();
 			jQuery("#overlay").show();
+//			GAME.player.failLevel();
 		},
 
 		completeLevel: function(){
 			GAME.timer.toggle();
-			var time = GAME.timer.getCurrentTime();
-			var score = time*this.settings.numShapes*this.settings.scoreMod;
+//			GAME.player.completeLevel();
 			jQuery("#overlay").show();
-
+//			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
+//			this.start;
 		}
 	}
-
-
-}(jQuery, undefined));
+}();
 
