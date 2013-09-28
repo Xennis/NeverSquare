@@ -1,6 +1,7 @@
 <html>
 
 <head>
+
 	<title>Darkside</title>
 
 	<!-- javascript libary -->
@@ -48,11 +49,22 @@
 </head>
 
 <body>
-	<div id="canvas_container"></div>
-	Time: <span id="gameTime"></span>
-	| Level: <span id="levelNumber"></span>
-	| Spades: <span id="spadesNumber"></span>
-	| Scores: <span id="scoreNumber"></span>
+
+	<div id="start_screen">
+		<h1>Welcome</h1>
+		<input type="text" id="playerName" placeholder="Your Name" required />
+		<button id="start">Start</button>
+	</div>
+
+	<div id="play_screen">	
+		<div id="canvas_container"></div>
+		Time: <span id="gameTime"></span>
+		| Level: <span id="levelNumber"></span>
+		| Spades: <span id="spadesNumber"></span>
+		| Scores: <span id="scoreNumber"></span>
+		| Name: <span id="playerName"></span>
+	</div>
+
 	<div id="overlay">
 		<div id="timeOut">
 			<span class="message">Time out !</span>

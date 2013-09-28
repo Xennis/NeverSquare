@@ -7,8 +7,16 @@ window.GAME = function() {
 
 	function jQuerySetEvents(){
 		jQuery("#restart").click(function(event){
-			jQuery("#overlay").hide();
+			jQuery("#overlay").hide().val;
+
 			GAME.board.resetBoard();
+		}),
+		jQuery("#start").click(function(event){
+			var player_name = jQuery("#playerName").val();
+			GAME.player.init(player_name);
+			jQuery("#start_screen").hide();
+			jQuery("#play_screen").show();
+			GAME.start();
 		})
 	}
 
@@ -33,11 +41,12 @@ window.GAME = function() {
 		},
 
 		init: function () {
-			GAME.player.init();
+			jQuerySetEvents();
+			jQuery("#play_screen").hide();
 		},
 
 		start: function () {
-			jQuerySetEvents();
+			
 
 			//this.board.clearBoard();
 		    this.board.buildBoard();
