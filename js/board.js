@@ -1,4 +1,4 @@
-window.BOARD = (function (jQuery){
+GAME.board = (function (jQuery){
 
 	var board = [],
 	 	shapes,

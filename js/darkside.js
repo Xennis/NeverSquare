@@ -1,3 +1,3 @@
 $(document).ready(function() {	
-	window.BOARD.buildBoard()
+	window.GAME.start();
 });
