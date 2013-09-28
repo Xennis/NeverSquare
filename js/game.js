@@ -1,10 +1,21 @@
 window.GAME = (function (jQuery){
 
+	function timeOutHtml(){
+		jQuery("#complete").hide();
+		jQuery("#timeOut").show();
+	}
+
+	function completeHtml(){
+
+
+	}
+
 	return {
 		settings: {
 			height: 600,
 			width: 800,
-			numShapes: 4
+			numShapes: 20,
+			scoreMod: 0.3
 		},
 
 		start: function () {
@@ -16,8 +27,16 @@ window.GAME = (function (jQuery){
 
 
 		timeOut: function (){
- 			//alert('Example 2: Countdown timer complete!');
+ 			timeOutHtml();
 			jQuery("#overlay").show();
+		},
+
+		completeLevel: function(){
+			GAME.timer.toggle();
+			var time = GAME.timer.getCurrentTime();
+			var score = time*this.settings.numShapes*this.settings.scoreMod;
+			jQuery("#overlay").show();
+
 		}
 	}
 
