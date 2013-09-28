@@ -3,11 +3,11 @@ var VoronoiDemo = {
 	sites: [],
 	diagram: null,
 	margin: 0.1,
-	bbox: {xl:0,xr:800,yt:0,yb:600},
+	bbox: {xl:0,xr:window.GAME.settings.width,yt:0,yb:window.GAME.settings.height},
 	lastCell: undefined,
 
-	generateShapes: function(numShapes) {
-		this.randomSites(numShapes,true,this.bbox.xr,this.bbox.yb);
+	generateShapes: function() {
+		this.randomSites(window.GAME.settings.numShapes,this.bbox.xr,this.bbox.yb);
 
 		var shapes = this.getShapes();
 		console.log(shapes);
@@ -15,8 +15,8 @@ var VoronoiDemo = {
 		},
 
 
-	randomSites: function(numShapes,clear,width,height) {
-		if (clear) {this.sites = [];}
+	randomSites: function(numShapes,width,height) {
+		this.sites = [];
 		// create vertices
 		var xmargin = width*this.margin,
 			ymargin = height*this.margin,

@@ -17,7 +17,7 @@ window.BOARD = (function (jQuery){
 
 	return {
 		buildBoard: function(){
-			shapes = shapes ? shapes : VoronoiDemo.generateShapes(10);
+			shapes = shapes ? shapes : VoronoiDemo.generateShapes();
 			jQuery.each(shapes, createSVGString);
 			return board;
 		}

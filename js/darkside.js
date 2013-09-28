@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var canvas = document.getElementById("canvas_container");
-	var xlength = 800, ylength = 600; 
+	var xlength = window.GAME.settings.width, ylength = window.GAME.settings.height; 
 	var paper = Raphael(canvas, xlength, ylength);
 	
 	var points = window.BOARD.buildBoard()
