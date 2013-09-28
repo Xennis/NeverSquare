@@ -34,6 +34,7 @@ GAME.board = (function (jQuery){
 	return {
 		buildBoard: function () {
 			var canvas = document.getElementById("canvas_container");
+			jQuery("#canvas_container").html("");
 			var xlength = 800, ylength = 600; 
 			paper = Raphael(canvas, xlength, ylength);
 
@@ -45,7 +46,7 @@ GAME.board = (function (jQuery){
 					shape.attr({fill: "#ddd"});
 					var colorIndex = getRandomColorIndex();
 					new PathColourFiller(shape, window.GAME.settings.hoverColors[colorIndex], window.GAME.settings.colors[colorIndex], "#ddd", function(item) {
-            		BOARD.checkBoard(item);
+            		GAME.board.checkBoard(item);
         		}).apply();
 			});
 
@@ -73,6 +74,14 @@ GAME.board = (function (jQuery){
 				console.log(shape.isCorrect);
 			});
 			console.log(boardCorrect);
+		},
+		resetBoard: function(){
+			paper.forEach(function(element){
+				element.isCorrect = false;
+				element.attr({fill: "#ddd"});
+			})
+			GAME.timer.resetTimer();
+			GAME.timer.toggle();
 		}
 	}
 
