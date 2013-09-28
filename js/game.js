@@ -30,8 +30,7 @@ window.GAME = function() {
 
 	function randomColor() {
 		colorIndex = getRandomColorIndex();
-		jQuery("#update");
-		console.log(GAME.getCurrentColor());
+		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
 		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
 
@@ -45,7 +44,7 @@ window.GAME = function() {
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "#ddd",	
 			timePerShape: 3000,
-			timePerColor: 2000,
+			timePerColor: 500,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
 		},
@@ -78,15 +77,20 @@ window.GAME = function() {
 			completeHtml();
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-			//this.start();
+			this.start();
 
 		},
 
 		getCurrentColor: function() {
 			return {
 				hover: window.GAME.settings.hoverColors[colorIndex], 
-				in: window.GAME.settings.colors[colorIndex]
+				active: window.GAME.settings.colors[colorIndex]
 			}
+		},
+
+		mouse: {
+			x:0, 
+			y:0
 		}
 	}
 }();

@@ -88,6 +88,9 @@ GAME.board = (function (jQuery){
 			})
 			GAME.timer.resetTimer();
 			GAME.timer.toggle();
+		},
+		getPaper: function () {
+			return paper;
 		}
 	}
 
