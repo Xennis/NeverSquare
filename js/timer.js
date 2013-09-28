@@ -9,11 +9,13 @@ GAME.timer = function(jQuery, shapeNumber){
 
         // Setup the timer
         countdown = $('#gameTime');
-        GAME.timer = $.timer(updateTimer, incrementTime, true);
+        GAME.timer = $.timer(updateTimer, incrementTime, false);
 
         GAME.timer.resetTimer = function(){
-          currentTime = shapeNumber*window.GAME.settings.timePerShape;
-          GAME.timer.stop().once();
+            
+
+            currentTime = shapeNumber*window.GAME.settings.timePerShape;
+            GAME.timer.stop().once();
          }
 
         GAME.timer.getCurrentTime = function(){

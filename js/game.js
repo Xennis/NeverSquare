@@ -16,6 +16,12 @@ window.GAME = function() {
 			GAME.player.init(player_name);
 			jQuery("#start_screen").hide();
 			jQuery("#play_screen").show();
+			GAME.timer.resetTimer();
+			GAME.start();
+		})
+		jQuery("#nextLevel").click(function(event){
+			jQuery("#overlay").hide().val;
+			GAME.timer.resetTimer();
 			GAME.start();
 		})
 	}
@@ -46,10 +52,10 @@ window.GAME = function() {
 		},
 
 		start: function () {
-			
 
 			//this.board.clearBoard();
 		    this.board.buildBoard();
+		    GAME.timer.toggle();
         },
 
 
@@ -65,8 +71,6 @@ window.GAME = function() {
 			completeHtml();
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-			//this.start();
-
 		},
 
 		getCurrentColor: function() {

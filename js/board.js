@@ -64,21 +64,22 @@ GAME.board = (function (jQuery){
 			var neighbours = finder.getNeighbours(clickedItem);
 			
 			clickedItem.isCorrect = checkNeighbours(clickedItem);
-
+			console.log("current:" + clickedItem.isCorrect);
 			//check neighbours of neighbours
 			jQuery.each(neighbours, function(index, shape) {
 				shape.isCorrect = checkNeighbours(shape);
+				console.log(shape.isCorrect);
 			});
 
 			//check global
-		//	console.log(shapes);
+			
 			paper.forEach(function (shape) {
 				boardCorrect = boardCorrect && shape.isCorrect;
 			});
 			if(boardCorrect === true){
 				GAME.completeLevel();
 			}
-			//console.log("board:" + boardCorrect);
+			console.log("board:" + boardCorrect);
 		},
 		resetBoard: function(){
 			paper.forEach(function(element){

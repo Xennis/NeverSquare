@@ -99,7 +99,7 @@ var VoronoiDemo = {
 			}
 			shapeArray[i] = edgeChain.getShape();
 		}
-		console.log(shapeArray);
+	//console.log(shapeArray);
 		return shapeArray;
 	},
 };
