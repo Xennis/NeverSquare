@@ -78,7 +78,7 @@ window.GAME = function() {
 			completeHtml();
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-			//this.start();
+			this.start();
 
 		},
 

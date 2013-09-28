@@ -68,7 +68,6 @@ var VoronoiDemo = {
 		this.randomSites(window.GAME.settings.numShapes,this.bbox.xr,this.bbox.yb);
 
 		var shapes = this.getShapes();
-		//console.log(shapes);
 		return shapes;
 	},
 
@@ -97,9 +96,12 @@ var VoronoiDemo = {
 				var edge = halfedges[j].edge;
 				edgeChain.addEdge(edge);
 			}
-			shapeArray[i] = edgeChain.getShape();
+			//	shapeArray[i] = edgeChain.getShape();
+			var shape = edgeChain.getShape();
+			if (shape != null) {
+				shapeArray.push(shape);
+			}
 		}
-		console.log(shapeArray);
 		return shapeArray;
 	},
 };
