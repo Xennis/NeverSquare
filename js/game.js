@@ -24,6 +24,7 @@ window.GAME = function() {
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
+			baseColor: "#ddd",	
 			timePerShape: 3000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
