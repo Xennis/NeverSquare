@@ -13,7 +13,9 @@ window.GAME = function() {
 	}
 
 	function completeHtml(){
-
+		jQuery("#timeOut").hide();
+		jQuery("#complete").show();
+		jQuery("#score").html("Score: " + GAME.player.score);
 	}
 
 	return {
@@ -51,9 +53,10 @@ window.GAME = function() {
 		completeLevel: function () {
 			GAME.timer.toggle();
 			GAME.player.completeLevel();
+			completeHtml();
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
-			this.start();
+			//this.start();
 
 		},
 
