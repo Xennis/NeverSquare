@@ -39,12 +39,12 @@ GAME.board = (function (jQuery){
 
 			shapes = shapes ? shapes : VoronoiDemo.generateShapes();
 			jQuery.each(shapes, createSVGString);
-
 			jQuery.each(board, function(index, svgString){
 					var shape = paper.path(svgString);
 					shape.isCorrect = false;
 					shape.attr({fill: "#ddd"});
-					new PathColourFiller(shape, "#aaaaaa", "ff0000", "#ffffff", function(item) {
+					var colorIndex = getRandomColorIndex();
+					new PathColourFiller(shape, window.GAME.settings.hoverColors[colorIndex], window.GAME.settings.colors[colorIndex], "#ffffff", function(item) {
             		BOARD.checkBoard(item);
         		}).apply();
 			});

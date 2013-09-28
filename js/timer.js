@@ -1,7 +1,7 @@
 GAME.timer = function(jQuery, shapeNumber){
 	var countdown;
-	var incrementTime = 70;
-	var currentTime = shapeNumber*300;
+	var incrementTime = window.GAME.settings.incrementTime;
+	var currentTime = shapeNumber*window.GAME.settings.timePerShape;
 
 
     $(function() {

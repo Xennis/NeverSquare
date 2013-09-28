@@ -6,4 +6,7 @@ function makeArrayset(arr, key) {
 	});
 }
 
+function getRandomColorIndex() {
+		return Math.floor(Math.random() * 4);
+	}
 
