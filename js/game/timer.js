@@ -1,8 +1,8 @@
 GAME.timer = function(jQuery, shapeNumber){
 
-	var countdown;
-	var incrementTime = window.GAME.settings.incrementTime;
-	var currentTime = shapeNumber*window.GAME.settings.timePerShape;
+    var countdown;
+    var incrementTime = window.GAME.settings.incrementTime;
+    var currentTime = shapeNumber*window.GAME.settings.timePerShape;
 
     $(function() {
 
@@ -18,8 +18,8 @@ GAME.timer = function(jQuery, shapeNumber){
          }
 
         GAME.timer.getCurrentTime = function(){
-    	return currentTime;
-   		}
+        return currentTime;
+        }
     });
    
     function updateTimer() {

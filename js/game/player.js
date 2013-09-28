@@ -18,29 +18,27 @@ GAME.player = function() {
 			this.tries = 0;
 
 			htmlLevel = $('#levelNumber');
-			htmlLevel.text(this.level);
 			htmlSpades = $('#spadesNumber');
-			htmlSpades.text(GAME.settings.numShapes);
 			htmlScores = $('#scoreNumber');
-			htmlScores.text(this.score);
 			$('#play_screen #playerName').text(this.name);
+			this.updateDisplay();
 		},
 
-		completeLevel: function() {
-			//var time = GAME.timer.getCurrentTime();
-			//var score = time*this.settings.numShapes*this.settings.scoreMod;
-			var time = GAME.timer.getCurrentTime();
+		completeLevel: function(time) {
 			this.score = time * GAME.settings.numShapes * GAME.settings.scoreMod;
 			this.level++;
 			this.tries = 0;
-	        
-	        htmlLevel.text(this.level);
-			htmlSpades.text(GAME.settings.numShapes);
-			htmlScores.text(this.score);
+	        this.updateDisplay();
 		},
 
 		failLevel: function() {
 			this.tries++;
+		},
+
+		updateDisplay: function() {
+	        htmlLevel.text(this.level);
+			htmlSpades.text(GAME.settings.numShapes);
+			htmlScores.text(this.score);
 		}
 	}
 }();
