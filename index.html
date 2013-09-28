@@ -24,10 +24,26 @@
 
 	<!-- style sheets -->
 	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		#wrap {
+			margin: 0 auto;
+			width: 1050px;
+		}
+
 		#canvas_container {
 			width: 800px;
 			height: 600px;
 			border: 1px black solid;
+			float: left;
+		}
+
+		#sidebar {
+			width: 249px;
+			height: 600px;
+			float: left;
 		}
 
 		#overlay {
@@ -49,34 +65,37 @@
 </head>
 
 <body>
+	<div id="wrap">
+		<div id="start_screen">
+			<h1>Welcome</h1>
+			<input type="text" id="playerName" placeholder="Your Name" required />
+			<button id="start">Start</button>
+		</div>
 
-	<div id="start_screen">
-		<h1>Welcome</h1>
-		<input type="text" id="playerName" placeholder="Your Name" required />
-		<button id="start">Start</button>
-	</div>
-
-	<div id="play_screen">	
-		<div id="canvas_container"></div>
-		Time: <span id="gameTime"></span>
-		| Level: <span id="levelNumber"></span>
-		| Spades: <span id="spadesNumber"></span>
-		| Scores: <span id="scoreNumber"></span>
-		| Name: <span id="playerName"></span>
-	</div>
+		<div id="play_screen">	
+			<div id="canvas_container"></div>
+			<div id="sidebar">
+				<div id="colorPreview"></div>
+				Time: <span id="gameTime"></span>
+				| Level: <span id="levelNumber"></span>
+				| Spades: <span id="spadesNumber"></span>
+				| Scores: <span id="scoreNumber"></span>
+				| Name: <span id="playerName"></span>
+			</div>
+		</div>
 
 	<div id="overlay">
 		<div id="timeOut">
 			<span class="message">Time out !</span>
 			<button id="restart">Restart</button>
-
 		</div>
-		<div id="complete">
-			<span class="message">Well done !</span>
-			<span id="score"></span>
+			<div id="complete">
+				<span class="message">Well done !</span>
+				<span id="score"></span>
 
-			<button id="nextLevel">Next Level</button>
+				<button id="nextLevel">Next Level</button>
 
+			</div>
 		</div>
 	</div>
 </body>

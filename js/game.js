@@ -1,5 +1,7 @@
 window.GAME = function() {
 
+	var colorIndex = 0;
+
 	function timeOutHtml(){
 		jQuery("#complete").hide();
 		jQuery("#timeOut").show();
@@ -32,6 +34,13 @@ window.GAME = function() {
 		jQuery("#score").html("Score: " + GAME.player.score);
 	}
 
+	function randomColor() {
+		colorIndex = getRandomColorIndex();
+		jQuery("#update");
+		console.log(GAME.getCurrentColor());
+		setTimeout(randomColor, GAME.settings.timePerColor);
+	}
+
 	return {
 		settings: {
 			height: 600,
@@ -42,11 +51,15 @@ window.GAME = function() {
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "#ddd",	
 			timePerShape: 3000,
+			timePerColor: 2000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
 		},
 
 		init: function () {
+			GAME.player.init();
+			//Call random color to get the first color
+			randomColor();
 			jQuerySetEvents();
 			jQuery("#play_screen").hide();
 		},
@@ -74,14 +87,11 @@ window.GAME = function() {
 		},
 
 		getCurrentColor: function() {
-			var colorIndex = getRandomColorIndex();
 			return {
 				hover: window.GAME.settings.hoverColors[colorIndex], 
 				in: window.GAME.settings.colors[colorIndex]
 			}
 		}
-
-
 	}
 }();
 
