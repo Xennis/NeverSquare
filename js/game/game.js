@@ -2,11 +2,6 @@ window.GAME = function() {
 
 	var colorIndex = 0;
 
-	function timeOutHtml(){
-		jQuery("#complete").hide();
-		jQuery("#timeOut").show();
-	}
-
 	function jQuerySetEvents(){
 		// restart button
 		jQuery("#restart").click(function(event){
@@ -30,7 +25,14 @@ window.GAME = function() {
 		})
 	}
 
+	function timeOutHtml(){
+		jQuery("#overlay").show();
+		jQuery("#complete").hide();
+		jQuery("#timeOut").show();
+	}
+
 	function completeHtml(){
+		jQuery("#overlay").show();
 		jQuery("#timeOut").hide();
 		jQuery("#complete").show();
 		jQuery("#score").html("Score: " + GAME.player.score);
@@ -77,17 +79,15 @@ window.GAME = function() {
 
 
 		timeOut: function (){
- 			timeOutHtml();
-			jQuery("#overlay").show();
 			GAME.player.failLevel();
+ 			timeOutHtml();
 		},
 
 		completeLevel: function () {
 			GAME.timer.toggle();
 			GAME.player.completeLevel(GAME.timer.getCurrentTime());
 			completeHtml();
-			jQuery("#overlay").show();
-			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
+			this.settings.numShapes += this.settings.addedShapesPerLevel;
 		},
 
 		getCurrentColor: function() {

@@ -6,7 +6,7 @@ GAME.player = function() {
 	var tries;
 
 	var htmlLevel;
-	var htmlSpades;
+	var htmlShapes;
 	var htmlScores;
 
 	return {
@@ -18,7 +18,7 @@ GAME.player = function() {
 			this.tries = 0;
 
 			htmlLevel = $('#levelNumber');
-			htmlSpades = $('#spadesNumber');
+			htmlShapes = $('#shapesNumber');
 			htmlScores = $('#scoreNumber');
 			$('#play_screen #playerName').text(this.name);
 			this.updateDisplay();
@@ -37,7 +37,7 @@ GAME.player = function() {
 
 		updateDisplay: function() {
 	        htmlLevel.text(this.level);
-			htmlSpades.text(GAME.settings.numShapes);
+			htmlShapes.text(GAME.settings.numShapes);
 			htmlScores.text(this.score);
 		}
 	}
