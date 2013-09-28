@@ -5,42 +5,26 @@ window.GAME = function() {
 	function jQuerySetEvents(){
 		// restart button
 		jQuery("#restart").click(function(event){
-			jQuery("#overlay").hide().val;
+			window.VIEW.hideLayer();
 			GAME.board.resetBoard();
 		}),
 		// start button
 		jQuery("#start").click(function(event){
-			var player_name = jQuery("#playerName").val();
-			GAME.player.init(player_name);
-			jQuery("#start_screen").hide();
-			jQuery("#play_screen").show();
-			GAME.timer.resetTimer();
+			GAME.player.init(jQuery("#playerName").val());
+
+			window.VIEW.showScreenPlay();
 			GAME.start();
 		}),
 		// next level button
 		jQuery("#nextLevel").click(function(event){
-			jQuery("#overlay").hide().val;
-			GAME.timer.resetTimer();
+			window.VIEW.hideLayer();
 			GAME.start();
 		})
 	}
 
-	function timeOutHtml(){
-		jQuery("#overlay").show();
-		jQuery("#complete").hide();
-		jQuery("#timeOut").show();
-	}
-
-	function completeHtml(){
-		jQuery("#overlay").show();
-		jQuery("#timeOut").hide();
-		jQuery("#complete").show();
-		jQuery("#score").html("Score: " + GAME.player.score);
-	}
-
 	function randomColor() {
 		colorIndex = getRandomInteger(3);
-		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
+		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
 
@@ -48,7 +32,7 @@ window.GAME = function() {
 		settings: {
 			height: 600,
 			width: 800,
-			numShapes: 4,
+			numShapes: 2,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
@@ -69,10 +53,11 @@ window.GAME = function() {
 			//Call random color to get the first color
 			randomColor();
 			jQuerySetEvents();
-			jQuery("#play_screen").hide();
+			window.VIEW.showScreenStart();
 		},
 
 		start: function () {
+			GAME.timer.resetTimer();
 		    this.board.buildBoard();
 		    GAME.timer.toggle();
         },
@@ -80,14 +65,14 @@ window.GAME = function() {
 
 		timeOut: function (){
 			GAME.player.failLevel();
- 			timeOutHtml();
+			window.VIEW.showLayerTimeout();
 		},
 
 		completeLevel: function () {
 			GAME.timer.toggle();
-			GAME.player.completeLevel(GAME.timer.getCurrentTime());
-			completeHtml();
 			this.settings.numShapes += this.settings.addedShapesPerLevel;
+			GAME.player.completeLevel(GAME.timer.getCurrentTime());
+			window.VIEW.showLayerComplete(GAME.player.score);
 		},
 
 		getCurrentColor: function() {

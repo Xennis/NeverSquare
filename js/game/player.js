@@ -5,10 +5,6 @@ GAME.player = function() {
 	var score;
 	var tries;
 
-	var htmlLevel;
-	var htmlShapes;
-	var htmlScores;
-
 	return {
 
 		init: function(name) {
@@ -17,28 +13,18 @@ GAME.player = function() {
 			this.score = 0;
 			this.tries = 0;
 
-			htmlLevel = $('#levelNumber');
-			htmlShapes = $('#shapesNumber');
-			htmlScores = $('#scoreNumber');
-			$('#play_screen #playerName').text(this.name);
-			this.updateDisplay();
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, GAME.settings.numShapes, this.score);
 		},
 
 		completeLevel: function(time) {
 			this.score = time * GAME.settings.numShapes * GAME.settings.scoreMod;
 			this.level++;
 			this.tries = 0;
-	        this.updateDisplay();
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, GAME.settings.numShapes, this.score);
 		},
 
 		failLevel: function() {
 			this.tries++;
-		},
-
-		updateDisplay: function() {
-	        htmlLevel.text(this.level);
-			htmlShapes.text(GAME.settings.numShapes);
-			htmlScores.text(this.score);
 		}
 	}
 }();

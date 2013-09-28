@@ -1,13 +1,11 @@
 GAME.timer = function(jQuery, shapeNumber){
 
-    var countdown;
     var incrementTime = window.GAME.settings.incrementTime;
     var currentTime = shapeNumber*window.GAME.settings.timePerShape;
 
     $(function() {
 
         // Setup the timer
-        countdown = $('#gameTime');
         GAME.timer = $.timer(updateTimer, incrementTime, false);
 
         GAME.timer.resetTimer = function(){
@@ -25,8 +23,7 @@ GAME.timer = function(jQuery, shapeNumber){
     function updateTimer() {
 
         // Output timer position
-        var timeString = formatTime(currentTime);
-        countdown.html(timeString);
+        window.VIEW.updateSidebarTime(formatTime(currentTime));
 
         // If timer is complete, trigger alert
         if (currentTime == 0) {
