@@ -31,6 +31,11 @@
 			left:0;
 			display:none;
 		}
+
+		#timeOut, #complete{
+			display: none;
+
+		}
 	</style>
 </head>
 
@@ -38,7 +43,18 @@
 	<div id="canvas_container"></div>
 	<span id="gameTime"></span>
 	<div id="overlay">
-		<!-- fancy stuff-->
+		<div id="timeOut">
+			<span class="message">Time out !</span>
+			<button id="restart">Restart</button>
+
+		</div>
+		<div id="complete">
+			<span class="message">Well done !</span>
+			<span id="score"></span>
+
+			<button id="nextLevel">Next Level</button>
+
+		</div>
 
 	</div>
 </body>

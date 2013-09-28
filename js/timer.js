@@ -4,15 +4,18 @@ GAME.timer = function(jQuery, shapeNumber){
 	var currentTime = shapeNumber*window.GAME.settings.timePerShape;
 
 
+
     $(function() {
 
         // Setup the timer
         countdown = $('#gameTime');
         GAME.timer = $.timer(updateTimer, incrementTime, true);
 
-       
+        GAME.timer.getCurrentTime = function(){
+    	return currentTime;
+   		}
     });
-
+    console.log(this);
     function updateTimer() {
 
         // Output timer position
@@ -24,7 +27,7 @@ GAME.timer = function(jQuery, shapeNumber){
             GAME.timer.stop();
            
             GAME.timeOut();
-            GAME.timer.resetCountdown();
+        
             return;
         }
 
@@ -34,17 +37,7 @@ GAME.timer = function(jQuery, shapeNumber){
 
     }
 
-    this.resetCountdown = function() {
-
-        // Get time from form
-        var newTime = parseInt($form.find('input[type=text]').val()) * 1000;
-        if (newTime > 0) {currentTime = newTime;}
-
-        // Stop and reset timer
-        GAME.timer.stop().once();
-
-    };
-
+ 
 
     // Common functions
 function pad(number, length) {
