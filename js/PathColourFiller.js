@@ -18,7 +18,7 @@ var PathColourFiller = function(item, colorIn, colorClick, colorOut, onClickCall
 		self.clicked = true;
 
 		if (typeof(onClickCallback) !== "undefined") {
-			onClickCallback();
+			onClickCallback(item);
 		}
 	}
 
