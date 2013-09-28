@@ -53,7 +53,18 @@ window.GAME = function() {
 			jQuery("#overlay").show();
 			this.settings.numShapes = this.settings.numShapes + this.settings.addedShapesPerLevel;
 			this.start();
+
+		},
+
+		getCurrentColor: function() {
+			var colorIndex = getRandomColorIndex();
+			return {
+				hover: window.GAME.settings.hoverColors[colorIndex], 
+				in: window.GAME.settings.colors[colorIndex]
+			}
 		}
+
+
 	}
 }();
 

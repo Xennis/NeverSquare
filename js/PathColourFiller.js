@@ -1,7 +1,13 @@
-var PathColourFiller = function(item, colorIn, colorClick, colorOut, onClickCallback) {
-	var self = this;
+var PathColourFiller = function(item, currentColor, colorOut, onClickCallback) {
+	var self = this,
+		colorClick,
+		colorIn;
 
 	this.fin = function(ev) {
+		var currentColorArray = currentColor();
+		colorClick = currentColorArray.in;
+		colorIn = currentColorArray.hover;
+
 		if (!self.clicked) {
 			item.attr('fill', colorIn);
 		}
@@ -31,5 +37,9 @@ var PathColourFiller = function(item, colorIn, colorClick, colorOut, onClickCall
 	this.apply = function() {
 		item.hover(self.fin, self.fout);
 		item.click(self.fclick);
+	}
+
+	this.reset = function(){
+		self.clicked = false;
 	}
 }
