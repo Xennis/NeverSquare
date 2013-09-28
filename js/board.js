@@ -23,7 +23,7 @@ GAME.board = (function (jQuery){
 		var neighbours = finder.getNeighbours(clickedItem);
 		jQuery.each(neighbours, function(index, element) {
 			var elementColor = element.attr("fill");
-				if (elementColor === clickedItemColor) {
+				if (elementColor === clickedItemColor || elementColor === GAME.settings.baseColor) {
 					isCorrect = false;
 					element.isCorrect = false;
 				}
@@ -43,11 +43,11 @@ GAME.board = (function (jQuery){
 			jQuery.each(board, function(index, svgString){
 					var shape = paper.path(svgString);
 					shape.isCorrect = false;
-					shape.attr({fill: "#ddd"});
+					shape.attr({fill: GAME.settings.baseColor});
 					shape.filler = new PathColourFiller(
 							shape, 
 							window.GAME.getCurrentColor, 
-							"#ddd", 
+							GAME.settings.baseColor, 
 							function(item) {
             					GAME.board.checkBoard(item);
         					}
@@ -71,19 +71,19 @@ GAME.board = (function (jQuery){
 			});
 
 			//check global
-			console.log(shapes);
+		//	console.log(shapes);
 			paper.forEach(function (shape) {
 				boardCorrect = boardCorrect && shape.isCorrect;
 			});
-			paper.forEach(function (shape){
-				console.log(shape.isCorrect);
-			});
-			console.log(boardCorrect);
+			if(boardCorrect === true){
+				GAME.completeLevel();
+			}
+			//console.log("board:" + boardCorrect);
 		},
 		resetBoard: function(){
 			paper.forEach(function(element){
 				element.isCorrect = false;
-				element.attr({fill: "#ddd"});
+				element.attr({fill: GAME.settings.baseColor});
 				element.filler.reset();
 			})
 			GAME.timer.resetTimer();
