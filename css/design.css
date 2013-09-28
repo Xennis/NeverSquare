@@ -19,20 +19,20 @@
 			width: 249px;
 			height: 600px;
 			float: left;
+			padding-left: 10px;
 		}
 
 		#overlay {
 			position: absolute;
 			width: 100%;
 			height:100%;
-			background-color: rgba(0,0,0,0.5);
+			/*background-color: rgba(0,0,0,0.5);*/
 			top:0;
 			left:0;
 			display:none;
 		}
 
 		#start_screen, #timeOut, #complete{
-
 			width: 300px;
 			height: 300px;
 			background-color: black;
@@ -50,9 +50,14 @@
 		}
 
 		#colorPreview {
+			margin: 5px auto;
 			width: 100px;
 			height: 100px;
 			background-color: #eee;
+			border-top-left-radius: 30px;
+			border-top-right-radius: 30px;
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
 		}
 
 
