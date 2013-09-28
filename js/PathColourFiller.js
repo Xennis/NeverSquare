@@ -1,9 +1,3 @@
-/*
-		window.GAME.settings.hoverColors[colorIndex], 
-		window.GAME.settings.colors[colorIndex], 
-		var colorIndex = getRandomColorIndex();
- */
-
 var PathColourFiller = function(item, currentColor, colorOut, onClickCallback) {
 	var self = this,
 		colorClick,
