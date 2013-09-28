@@ -10,8 +10,15 @@ window.GAME = (function (jQuery){
         start: function () {
             this.board.buildBoard();
 
-            jQuery("#time").text();
-        }
+            
+        },
+
+
+		timeOut: function (){
+ 			//alert('Example 2: Countdown timer complete!');
+			jQuery("#overlay").show();
+		}
 	}
+
 
 }(jQuery, undefined));
