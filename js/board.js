@@ -44,10 +44,15 @@ GAME.board = (function (jQuery){
 					var shape = paper.path(svgString);
 					shape.isCorrect = false;
 					shape.attr({fill: "#ddd"});
-					var colorIndex = getRandomColorIndex();
-					new PathColourFiller(shape, window.GAME.settings.hoverColors[colorIndex], window.GAME.settings.colors[colorIndex], "#ddd", function(item) {
-            		GAME.board.checkBoard(item);
-        		}).apply();
+					shape.filler = new PathColourFiller(
+							shape, 
+							window.GAME.getCurrentColor, 
+							"#ddd", 
+							function(item) {
+            					GAME.board.checkBoard(item);
+        					}
+        				);
+        			shape.filler.apply();
 			});
 
 			finder = new PathNeighbourFinder(paper);
@@ -79,6 +84,7 @@ GAME.board = (function (jQuery){
 			paper.forEach(function(element){
 				element.isCorrect = false;
 				element.attr({fill: "#ddd"});
+				element.filler.reset();
 			})
 			GAME.timer.resetTimer();
 			GAME.timer.toggle();

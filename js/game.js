@@ -49,7 +49,17 @@ window.GAME = (function (jQuery){
 			var score = time*this.settings.numShapes*this.settings.scoreMod;
 			jQuery("#overlay").show();
 
+		},
+
+		getCurrentColor: function() {
+			var colorIndex = getRandomColorIndex();
+			return {
+				hover: window.GAME.settings.hoverColors[colorIndex], 
+				in: window.GAME.settings.colors[colorIndex]
+			}
 		}
+
+
 	}
 
 
