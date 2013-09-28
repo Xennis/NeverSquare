@@ -20,24 +20,21 @@ window.GAME = function() {
 			jQuery("#play_screen").show();
 			GAME.timer.resetTimer();
 			GAME.start();
-		})
+		});
 		jQuery("#nextLevel").click(function(event){
 			jQuery("#overlay").hide().val;
 			GAME.timer.resetTimer();
 			GAME.start();
-		})
+		});
+		jQuery("#colorPreview").click(function(){
+			GAME.randomColor();
+		});
 	}
 
 	function completeHtml(){
 		jQuery("#timeOut").hide();
 		jQuery("#complete").show();
 		jQuery("#score").html("Score: " + GAME.player.score);
-	}
-
-	function randomColor() {
-		colorIndex = getRandomColorIndex();
-		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
-		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
 
 	return {
@@ -49,8 +46,8 @@ window.GAME = function() {
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "#ddd",	
-			timePerShape: 3000,
-			timePerColor: 500,
+			timePerShape: 4000,
+			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
 		},
@@ -58,7 +55,10 @@ window.GAME = function() {
 		init: function () {
 			GAME.player.init();
 			//Call random color to get the first color
-			randomColor();
+			(function randomColorTimer () {
+				GAME.randomColor();
+				setTimeout(randomColorTimer, GAME.settings.timePerColor);
+			}());
 			jQuerySetEvents();
 			jQuery("#play_screen").hide();
 		},
@@ -90,6 +90,11 @@ window.GAME = function() {
 				hover: window.GAME.settings.hoverColors[colorIndex], 
 				active: window.GAME.settings.colors[colorIndex]
 			}
+		},
+
+		randomColor: function () {
+			colorIndex = getRandomColorIndex();
+    		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
 		},
 
 		mouse: {

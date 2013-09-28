@@ -4,7 +4,7 @@ var PathColourFiller = function(item, currentColor, colorOut, onClickCallback) {
 
 	this.fin = function(ev) {
 		if (!self.clicked) {
-			item.attr('fill', currentColor().hover);
+			item.attr('fill', "rgba(0,0,0,.4)");
 		}
 	}
 
@@ -33,21 +33,7 @@ var PathColourFiller = function(item, currentColor, colorOut, onClickCallback) {
 	this.apply = function() {
 		item.hover(self.fin, self.fout);
 		item.click(self.fclick);
-		item.mousemove(function(ev){
-			GAME.mouse.x = ev.x;
-			GAME.mouse.y = ev.y;
-		});
 	}
-
-	function updateCurrentColor() {
-		var _item = GAME.board.getPaper().getElementByPoint(GAME.mouse.x, GAME.mouse.y);
-		if (_item) {
-			_item.attr('fill', currentColor().hover);
-		}
-
-		setTimeout(updateCurrentColor, 100);
-	}
-	updateCurrentColor();
 
 	this.reset = function(){
 		self.clicked = false;
