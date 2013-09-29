@@ -47,10 +47,11 @@ GAME.player = function() {
 	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);	
 		},
 
-		getName: function(){
+		getName: function() {
 			return this.name;
 		},
-		getScore: function(){
+
+		getScore: function() {
 			return this.score;
 		}
 	}
