@@ -76,6 +76,10 @@ button {
 	height:48px;
 }
 
+#restart:hover {
+	background-image: url('../img/retry_hover.png');
+}
+
 #nextLevel{
 	background-image: url('../img/Nextlevel.png');
 	background-repeat: no-repeat;
@@ -83,22 +87,30 @@ button {
 	height:48px;
 }
 
-#start, #endTutorial{
+#nextLevel:hover {
+	background-image: url('../img/Nextlevel_hover.png');
+}
+
+#start, #endTutorial, #endHighscore{
 	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
 }
 
-#start:hover, #endTutorial:hover, #endHighscore {
+#start:hover, #endTutorial:hover, #endHighscore:hover {
 	background-image: url('../img/play_hover.png');
 }
 
 #sidebar #startTutorial{
-	background-image: url('../img/realtutorial.png');
+	background-image: url('../img/tutorial.png');
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
+}
+
+#sidebar #startTutorial:hover{
+	background-image: url('../img/realtutorial_hover.png');
 }
 
 #sidebar #showHighscore{
@@ -106,6 +118,10 @@ button {
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
+}
+
+#sidebar #showHighscore:hover{
+	background-image: url('../img/highscorebutton_hover.png');
 }
 
 #endHighscore{
