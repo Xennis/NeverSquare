@@ -24,7 +24,7 @@ else if ($_SERVER['REQUEST_METHOD'] === "POST") {
 } 
 
 /**
- * Get highscores
+ * Get highscores.
  *
  * @return JSON object with top ten highscores
  */
@@ -67,4 +67,5 @@ function insertScore($name, $score) {
 	}
 	return json_encode($returnValue);
 }
+
 ?>

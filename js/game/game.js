@@ -16,22 +16,22 @@ window.GAME = function() {
 		// Tutorial buttons
 		jQuery("#startTutorial").click(function(event){
 			window.GAME.timer.toggle();
-			window.VIEW.showTutorialLayer(window.GAME.settings.timePerColor/1000);
+			window.VIEW.showLayerTutorial(window.GAME.settings.timePerColor/1000);
 		}),
 
 		jQuery("#endTutorial").click(function(event){
-			window.VIEW.hideTutorialLayer();
+			window.VIEW.hideLayer();
 			window.GAME.timer.toggle();
 		});
 		//Highscore buttons
 		jQuery("#showHighscore").click(function(event){
 			window.GAME.timer.toggle();
 			//GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
-			window.VIEW.showHighscoreLayer(0);
+			window.VIEW.showLayerHighscore(0);
 		});
 
 		jQuery("#endHighscore").click(function(event){
-			window.VIEW.hideHighscoreLayer();
+			window.VIEW.hideLayer();
 			window.GAME.timer.toggle();
 		});
 

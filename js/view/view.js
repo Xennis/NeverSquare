@@ -16,47 +16,35 @@ window.VIEW = function() {
 		// ------ layer -------
 		hideLayer: function() {
 			jQuery("#overlay").hide().val;
-			jQuery("#tutorial").hide().val;
+		},
+
+		showLayer: function(layerId) {
+			jQuery("#overlay").show();
+			jQuery("#complete").hide();
+			jQuery("#timeOut").hide();
+			jQuery("#tutorial").hide();
+			jQuery("#highscore").hide();
+			jQuery(layerId).show();			
 		},
 
 		showLayerTimeout: function(losePoints){
-			jQuery("#overlay").show();
-			jQuery("#complete").hide();
-			jQuery("#timeOut").show();
-			jQuery("#tutorial").hide();
-			jQuery("#highscore").hide();
+			this.showLayer("#timeOut");
 			jQuery('#timeOut #losePoints').text("Lose points: " + losePoints);
 		},
 
 		showLayerComplete: function(numLevel, numShapes, numScores){
-			jQuery("#overlay").show();
-			jQuery("#timeOut").hide();
-			jQuery("#complete").show();
+			this.showLayer("#complete");
 			jQuery('#complete #levelNumber').text("Level: " + numLevel);
 			jQuery('#complete #shapesNumber').text("Shapes: " + numShapes);
 			jQuery("#complete #score").text("Score: " + numScores);
-			jQuery("#tutorial").hide();
-			jQuery("#highscore").hide();
 		},
 
-		showTutorialLayer: function(timePerColor){
-			jQuery("#overlay").show();
-			jQuery("#timeOut").hide();
-			jQuery("#complete").hide();
-			jQuery("#tutorial").show();
-			jQuery("#highscore").hide();
-			jQuery("#timePerColor").text(timePerColor);
+		showLayerTutorial: function(timePerColor){
+			this.showLayer("#tutorial");
+			jQuery("#tutorial #timePerColor").text(timePerColor);
 		},
 
-		hideTutorialLayer: function(){
-			jQuery("#overlay").hide();
-			jQuery("#timeOut").hide();
-			jQuery("#complete").hide();
-			jQuery("#tutorial").hide();
-			jQuery("#highscore").hide();
-		},
-
-		showHighscoreLayer: function(scoreList){
+		showLayerHighscore: function(scoreList){
 			/*var highscore = jQuery("#highscore");
 			jQuery.each(scoreList, function(index, score){
 				var playerSpan = "<span id=\"p"+(index+1)+"\" class=\"player\">"+ score.name+"</span>";
@@ -65,26 +53,13 @@ window.VIEW = function() {
 				highscore.html(scoreSpan);
 			});
 			*/
-			jQuery("#overlay").show();
-			jQuery("#timeOut").hide();
-			jQuery("#complete").hide();
-			jQuery("#tutorial").hide();
-			jQuery("#highscore").show();
-		},
-
-		hideHighscoreLayer: function(){
-			jQuery("#overlay").hide();
-			jQuery("#timeOut").hide();
-			jQuery("#complete").hide();
-			jQuery("#tutorial").hide();
-			jQuery("#highscore").hide();
+			this.showLayer("#highscore");
 		},
 
 		// ------ sidebar (play screen) -------
 		updateSidebarPlayer: function(name, numLevel, numScores, numTries) {
 			jQuery('#play_screen #playerName').text(name);
 			jQuery('#levelNumber').text(numLevel);
-//			jQuery('#shapesNumber').text(numShapes);
 			jQuery('#scoreNumber').text(numScores);
 			jQuery('#triesNumber').text(numTries);
 		},
@@ -97,8 +72,6 @@ window.VIEW = function() {
 		updateSidebarTime: function(time) {
 			jQuery('#gameTime').text(time);
 		}
-
-
 
 	}
 }();
