@@ -36,7 +36,7 @@ GAME.board = (function (jQuery){
 			board = [];
 			var canvas = document.getElementById("canvas_container");
 			jQuery("#canvas_container").html("");
-			var xlength = 800, ylength = 600; 
+			var xlength = 784, ylength = 584; 
 			paper = Raphael(canvas, xlength, ylength);
 
 			shapes = VoronoiDemo.generateShapes();
