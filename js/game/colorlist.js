@@ -22,7 +22,7 @@ GAME.colorlist = (function (window, jQuery) {
         generate: function () {
             if (colors.length > 20)
                 return;
-            var colorIndex = getRandomInteger(3);
+            var colorIndex = getRandomColorIndex();
                 colors.push({
                     hover: window.GAME.settings.hoverColors[colorIndex],
                     active: window.GAME.settings.colors[colorIndex]
