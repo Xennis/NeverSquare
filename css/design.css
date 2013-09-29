@@ -13,10 +13,17 @@ button {
 }
 
 
-#start_screen, #timeOut, #complete, #tutorial {
+#start_screen, #timeOut, #complete, #tutorial{
 	background-color: rgba(255,255,255, 0.8);
 	border-radius: 20px;
 	text-align: center;
+	padding: 50px;
+	padding: 50px;
+}
+
+#highscore{
+	background-image: url('../img/highscore.png');
+	color:#fff;
 	padding: 50px;
 	padding: 50px;
 }
@@ -83,5 +90,13 @@ button {
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
-
 }
+
+#sidebar #showHighscore{
+background-image: url('../img/realtutorial.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+}
+
+
