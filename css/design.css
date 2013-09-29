@@ -44,6 +44,7 @@ button {
 #sidebar {
 	background-image: url('../img/NeverSquareSidebarl.png');
 	background-repeat: no-repeat;
+	font-size: 25px;
 	color: #fff;
 }
 
