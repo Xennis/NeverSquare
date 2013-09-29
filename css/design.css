@@ -22,9 +22,23 @@ button {
 	padding: 50px;
 }
 
+#sidebar #scoreNumber {
+	font-size: 35px;
+	text-align: center;
+}
+
+#sidebar #gameTime {
+	font-size: 40px;
+	text-align: center;
+}
+
 #sidebar #colorPreview {
 	background-color: #eee;
 	border-radius: 5px;
+}
+
+#sidebar #triesNumber {
+	font-size: 25px;
 }
 
 #sidebar {

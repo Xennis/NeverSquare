@@ -25,8 +25,14 @@
 
 #sidebar #gameTime {
 	position: absolute;
-	bottom: 40px;
-	left: 130px;
+
+	
+	left: 103px;
+
+	bottom: 30px;
+	/*left: 50px;*/
+	/*width: 100%;*/
+
 }
 
 #sidebar #levelNumber {
@@ -41,10 +47,8 @@
 #sidebar #scoreNumber {
 	position: absolute;
 	left: 95px;
-	bottom: 132px;
+	bottom: 126px;
 	width: 175px;
-	text-align: right;
-	
 }
 
 
@@ -52,6 +56,15 @@
 	position: absolute;
 	left: 200px;
 	top: 60px;
+	width:125px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#sidebar #triesNumber {
+	position: absolute;
+	left: 177px;
+	top: 346px;
 }
 
 #sidebar #colorPreview {
