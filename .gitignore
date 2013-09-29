@@ -1,3 +1,5 @@
 *.swp
 *~
+
+# database connection settings
 config.php
