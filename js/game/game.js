@@ -1,7 +1,5 @@
 window.GAME = function() {
 
-	var colorIndex = 0;
-
 	function jQuerySetEvents(){
 		// restart button
 		jQuery("#restart").click(function(event){
@@ -34,13 +32,6 @@ window.GAME = function() {
 			GAME.randomColor();
 		});
 		jQuery("body").keyup(function(event){
-			if (event.which === 68) {
-				colorIndex = colorIndex === 4 ? 0 : colorIndex + 1;	
-			}
-			if (event.which === 65) {
-				colorIndex = colorIndex === 0 ? 4 : colorIndex - 1;
-			}
-			GAME.randomColor();
 			event.preventDefault();
 		});
 	}
@@ -49,12 +40,6 @@ window.GAME = function() {
 		jQuery("#timeOut").hide();
 		jQuery("#complete").show();
 		jQuery("#score").html("Score: " + GAME.player.scoreLastGame);
-	}
-
-	function randomColor() {
-		colorIndex = getRandomInteger(3);
-		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
-		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
 
 	return {
@@ -83,10 +68,9 @@ window.GAME = function() {
 			GAME.colorlist.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
-				colorIndex = getRandomInteger(4);
-				GAME.randomColor();
 				GAME.colorlist.setNextColor();
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
+				window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 			}());
 			jQuerySetEvents();
 			window.VIEW.showScreenStart();
@@ -113,12 +97,7 @@ window.GAME = function() {
 		},
 
 		getCurrentColor: function() {
-			console.log(GAME.colorlist.getCurrentColor());
-			console.log(GAME.colorlist.getNextColor());
-			return {
-				hover: window.GAME.settings.hoverColors[colorIndex], 
-				active: window.GAME.settings.colors[colorIndex]
-			}
+			return GAME.colorlist.getCurrentColor();
 		},
 
 		randomColor: function () {
