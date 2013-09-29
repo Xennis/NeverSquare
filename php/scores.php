@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 // The JSON standard MIME header.
 header('Content-type: application/json');
 
@@ -18,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 	echo getHighscore();
 } 
 else if ($_SERVER['REQUEST_METHOD'] === "POST") {
-	echo insertScore($_POST["name"], $_POST["score"]);
+	echo insertScore($_POST["name"], intval($_POST["score"]));
 } 
 
 /**
@@ -46,10 +48,6 @@ function getHighscore() {
 	return json_encode($highscores);
 }
 
-//function insertScoreJson($json) {
-//	insertScore($json->{'name'}, $json->{'score'});
-//}
-
 /**
  * Insert new score
  *
@@ -61,7 +59,7 @@ function insertScore($name, $score) {
 	$returnValue = new stdClass();
 	$returnValue->result = false;
 
-	if (!empty($name) && !empty($score)) {
+	if (!empty($name) && (strlen($name) < 30) && !empty($score)) {
 		$sql = "INSERT INTO neversquare_scores
 					VALUES ('$name', $score)";
 		$returnValue->result = mysql_query($sql);
