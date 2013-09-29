@@ -45,8 +45,8 @@ window.GAME = function() {
 	return {
 		settings: {
 
-			height: 600,
-			width: 800,
+			height: 584,
+			width: 784,
 			numShapes: 2,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
