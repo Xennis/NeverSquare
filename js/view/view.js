@@ -19,11 +19,12 @@ window.VIEW = function() {
 			jQuery("#tutorial").hide().val;
 		},
 
-		showLayerTimeout: function(){
+		showLayerTimeout: function(losePoints){
 			jQuery("#overlay").show();
 			jQuery("#complete").hide();
 			jQuery("#timeOut").show();
 			jQuery("#tutorial").hide();
+			jQuery('#timeOut #losePoints').text("Lose points: " + losePoints);
 		},
 
 		showLayerComplete: function(numLevel, numShapes, numScores){
