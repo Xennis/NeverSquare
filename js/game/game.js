@@ -81,6 +81,7 @@ window.GAME = function() {
 		},
 
 		start: function () {
+			GAME.player.nextLevel();
 			GAME.timer.resetTimer();
 		    this.board.buildBoard();
 		    GAME.timer.toggle();
