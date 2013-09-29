@@ -64,7 +64,7 @@ window.GAME = function() {
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "rgba(0,0,0,.4)",	
-			timePerShape: 5000,
+			timePerShape: 15000,
 			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
