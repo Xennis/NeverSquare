@@ -31,7 +31,16 @@ GAME.player = function() {
 
 		failLevel: function() {
 			this.tries++;
+			// minus points
+			if (this.level > 1) {
+				this.scoreLastGame = -Math.floor((this.score * this.level) / 100);
+			} else {
+				this.scoreLastGame = -100;
+			}
+			this.score += this.scoreLastGame;
+
 			this.updateView();
+			return this.scoreLastGame;
 		},
 
 		updateView: function() {
