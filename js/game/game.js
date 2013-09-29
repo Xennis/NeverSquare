@@ -6,43 +6,42 @@ window.GAME = function() {
 			window.VIEW.hideLayer();
 			GAME.board.resetBoard();
 		}),
-		// start button
+		// button start
 		jQuery("#start").click(function(event){
 			GAME.player.init(jQuery("#playerName").val());
 
 			window.VIEW.showScreenPlay();
 			GAME.start();
-		});
-		// Tutorial buttons
+		}),
+		// button tutorial
 		jQuery("#startTutorial").click(function(event){
 			window.GAME.timer.toggle();
 			window.VIEW.showLayerTutorial(window.GAME.settings.timePerColor/1000);
 		}),
 
-		jQuery("#endTutorial").click(function(event){
+		// button player
+		jQuery(".button_play").click(function(event){
 			window.VIEW.hideLayer();
 			window.GAME.timer.toggle();
-		});
-		//Highscore buttons
+		}),
+
+		// button highscore
 		jQuery("#showHighscore").click(function(event){
 			window.GAME.timer.toggle();
 			//GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
 			window.VIEW.showLayerHighscore(0);
-		});
+		}),
 
-		jQuery("#endHighscore").click(function(event){
-			window.VIEW.hideLayer();
-			window.GAME.timer.toggle();
-		});
-
-		// next level button
+		// button next level
 		jQuery("#nextLevel").click(function(event){
 			window.VIEW.hideLayer();
 			GAME.start();
-		});
+		}),
+
+		//
 		jQuery("#colorPreview").click(function(){
 			
-		});
+		}),
 		jQuery("body").keyup(function(event){
 			event.preventDefault();
 		});

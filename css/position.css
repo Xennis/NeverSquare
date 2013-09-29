@@ -3,6 +3,11 @@
 	-moz-box-sizing: border-box;
 }
 
+svg {
+	top: 7px;
+	left: 7px;
+}
+
 #wrap {
 	margin: 0 auto;
 	width: 1200px;
@@ -19,23 +24,64 @@
 	left: 3px;
 }
 
-svg {
-	top: 7px;
-	left: 7px;
+#start_screen {
+	margin: 50px auto;
+	width: 800px;
 }
 
+#start_screen #playerName {
+	font-size: 23px;
+	position: relative;
+	top: -11px;
+}
+
+.player {
+	position:absolute;
+	right:190px;
+}
+
+.score {
+	position:absolute;
+	right:80px;
+}
+
+/* ----------------------- layer ------------------------ */
+#overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#timeOut,
+#complete{
+	width: 300px;
+	height: 300px;
+	margin: 50px auto;
+}
+
+#tutorial {
+	width: 400px;
+	height: 425px;
+	margin: 50px auto;
+}
+
+#highscore {
+	position: relative;
+	width: 400px;
+	height: 425px;
+	margin: 50px auto;
+}
+
+/* ----------------------- sidebar ------------------------ */
 #sidebar {
 	width: 350px;
 	height: 600px;
 	float: left;
 	padding-left: 10px;
 	position: relative;
-}
-
-#playerName {
-	font-size: 23px;
-	position: relative;
-	top: -11px;
 }
 
 #sidebar #gameTime {
@@ -59,7 +105,6 @@ svg {
 	width: 175px;
 }
 
-
 #sidebar #playerName {
 	position: absolute;
 	left: 200px;
@@ -74,7 +119,7 @@ svg {
 	top: 346px;
 }
 
-#colorPreview {
+#sidebar #colorPreview {
 	position: absolute;
 	width: 132px;
 	height: 59px;
@@ -82,7 +127,7 @@ svg {
 	top: 154px;
 }
 
-#colorPreview #currentColor {
+#sidebar #colorPreview #currentColor {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -90,7 +135,7 @@ svg {
 	height: 59px;
 }
 
-#colorPreview #nextColor {
+#sidebar #colorPreview #nextColor {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -111,56 +156,7 @@ svg {
 	top:90px;
 }
 
-#overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	/*background-color: rgba(0,0,0,0.5);*/
-	top: 0;
-	left: 0;
-	display: none;
-}
-
-#timeOut, #complete{
-	width: 300px;
-	height: 300px;
-	margin: 50px auto;
-}
-
-#tutorial{
-	width: 400px;
-	height: 425px;
-	margin: 50px auto;
-}
-
-#highscore{
-	position: relative;
-	width: 400px;
-	height: 425px;
-	margin: 50px auto;
-}
-
-#start_screen {
-	margin: 50px auto;
-	width: 800px;
-}
-
-#highscore #endHighscore{
-	position:absolute;
-	right:27px;
-	bottom:119px;
-}
-
-.player{
-	position:absolute;
-	right:190px;
-}
-
-.score{
-	position:absolute;
-	right:80px;
-}
-
+/* ----------------------- p1 to p10 ------------------------ */
 #p1, #s1{
 	top:105px;
 }
@@ -196,4 +192,3 @@ svg {
 #p10, #s10{
 	top:430px;
 }
-

@@ -12,8 +12,7 @@ button {
 	cursor: pointer;
 }
 
-
-#start_screen, #timeOut, #complete, #tutorial{
+#start_screen, #timeOut, #complete, #tutorial {
 	background-color: rgba(255,255,255, 0.8);
 	border-radius: 20px;
 	text-align: center;
@@ -69,39 +68,7 @@ button {
 	background-repeat: no-repeat;
 }
 
-#restart{
-	background-image: url('../img/buttons/retry.png');
-	background-repeat: no-repeat;
-	width:89px;
-	height:48px;
-}
-
-#restart:hover {
-	background-image: url('../img/buttons/retry_hover.png');
-}
-
-#nextLevel{
-	background-image: url('../img/buttons/next_level.png');
-	background-repeat: no-repeat;
-	width:89px;
-	height:48px;
-}
-
-#nextLevel:hover {
-	background-image: url('../img/buttons/next_level_hover.png');
-}
-
-#start, #endTutorial, #endHighscore{
-	background-image: url('../img/buttons/play.png');
-	background-repeat: no-repeat;
-	width:89px;
-	height:48px;
-}
-
-#start:hover, #endTutorial:hover, #endHighscore:hover {
-	background-image: url('../img/buttons/play_hover.png');
-}
-
+/* ----------------------- sidebar ------------------------ */
 #sidebar #startTutorial{
 	background-image: url('../img/buttons/noob_guide.png');
 	background-repeat: no-repeat;
@@ -124,12 +91,44 @@ button {
 	background-image: url('../img/buttons/highscore_hover.png');
 }
 
-#endHighscore{
+/* ----------------------- buttons ------------------------ */
+#restart{
+	background-image: url('../img/buttons/retry.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+}
+
+#restart:hover {
+	background-image: url('../img/buttons/retry_hover.png');
+}
+
+#nextLevel{
+	background-image: url('../img/buttons/next_level.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+}
+
+#nextLevel:hover {
+	background-image: url('../img/buttons/next_level_hover.png');
+}
+
+#start,
+.button_play {
 	background-image: url('../img/buttons/play.png');
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
-
 }
 
+#start:hover,
+.button_play:hover {
+	background-image: url('../img/buttons/play_hover.png');
+}
 
+#highscore .button_play {
+	position: absolute;
+	right: 27px;
+	bottom: 119px;
+}
