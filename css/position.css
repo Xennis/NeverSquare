@@ -25,8 +25,9 @@
 
 #sidebar #gameTime {
 	position: absolute;
-	bottom: 40px;
-	left: 50px;
+	bottom: 34px;
+	/*left: 50px;*/
+	width: 100%;
 }
 
 #sidebar #levelNumber {
@@ -37,8 +38,9 @@
 
 #sidebar #scoreNumber {
 	position: absolute;
-	left: 150px;
-	bottom: 150px;
+	/*left: 150px;*/
+	width: 100%;
+	bottom: 130px;
 }
 
 #sidebar #playerName {
