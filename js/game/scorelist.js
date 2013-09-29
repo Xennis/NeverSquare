@@ -9,7 +9,7 @@ GAME.scorelist = (function (window, jQuery) {
             });
         },
         saveScore: function(name, score, callback) {
-            $.post("savescore.php", {"name":"player","score":100}, function(data) {
+            $.post(location, {"name":"player","score":100}, function(data) {
                 callback(data);
             }, "json");
         }
