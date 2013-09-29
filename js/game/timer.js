@@ -9,9 +9,7 @@ GAME.timer = function(jQuery, shapeNumber){
         GAME.timer = $.timer(updateTimer, incrementTime, false);
 
         GAME.timer.resetTimer = function(){
-            
-
-            currentTime = shapeNumber*window.GAME.settings.timePerShape;
+            currentTime = GAME.settings.numShapes*window.GAME.settings.timePerShape;
             GAME.timer.stop().once();
          }
 
