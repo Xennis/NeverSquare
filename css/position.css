@@ -153,32 +153,32 @@ svg {
 
 .player{
 	position:absolute;
-	right:830px;
+	right:190px;
 }
 
 .score{
 	position:absolute;
-	right:730px;
+	right:80px;
 }
 
 #p1, #s1{
-	top:155px;
+	top:105px;
 }
 
 #p2, #s2{
-	top:190px;
+	top:135px;
 }
 
 #p3, #s3{
-	top:225px;
+	top:175px;
 }
 
 #p4, #s4{
-	top:255px;
+	top:205px;
 }
 
 #p5, #s5{
-	top:285px;
+	top:235px;
 }
 
 #p6, #s6{

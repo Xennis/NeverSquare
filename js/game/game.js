@@ -26,7 +26,8 @@ window.GAME = function() {
 		//Highscore buttons
 		jQuery("#showHighscore").click(function(event){
 			window.GAME.timer.toggle();
-			GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
+			//GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
+			window.VIEW.showHighscoreLayer(0);
 		});
 
 		jQuery("#endHighscore").click(function(event){
@@ -56,8 +57,8 @@ window.GAME = function() {
 	return {
 		settings: {
 
-			height: 584,
-			width: 784,
+			height: 600,
+			width: 800,
 			numShapes: 2,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
