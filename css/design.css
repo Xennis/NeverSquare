@@ -7,12 +7,11 @@ body {
 }
 
 button {
-	margin: 15px 2px 5px 2px;
-	padding: 2px 10px;
-	color: white;
-	background-color: #3300CC;
-	border-radius: 20px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
+
 
 #start_screen, #timeOut, #complete, #tutorial {
 	background-color: rgba(255,255,255, 0.8);
@@ -51,4 +50,25 @@ button {
 #canvas_container {
 	background-image: url('../img/NeverSquareFullGamebackground2.png');
 	background-repeat: no-repeat;
+}
+
+#restart{
+	background-image: url('../img/retry.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+}
+
+#nextLevel{
+	background-image: url('../img/Nextlevel.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+}
+
+#start{
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
 }
