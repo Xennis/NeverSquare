@@ -10,24 +10,32 @@ GAME.player = function() {
 
 		init: function(name) {
 			this.name = name;
-			this.level = 1;
+			this.level = 0;
 			this.score = 0;
 			this.tries = 0;
 
-	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
+			this.updateView();
 		},
 
 		completeLevel: function(time) {
 			this.scoreLastGame = time * GAME.settings.numShapes * GAME.settings.scoreMod;
 			this.score += this.scoreLastGame; 
+			this.updateView();
+		},
+
+		nextLevel: function() {
 			this.level++;
 			this.tries = 0;
-	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
+			this.updateView();
 		},
 
 		failLevel: function() {
 			this.tries++;
-	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
+			this.updateView();
+		},
+
+		updateView: function() {
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);	
 		}
 	}
 }();
