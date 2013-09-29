@@ -14,12 +14,31 @@ window.GAME = function() {
 
 			window.VIEW.showScreenPlay();
 			GAME.start();
-		}),
+		});
 		// next level button
 		jQuery("#nextLevel").click(function(event){
 			window.VIEW.hideLayer();
 			GAME.start();
-		})
+		});
+		jQuery("#colorPreview").click(function(){
+			GAME.randomColor();
+		});
+		jQuery("body").keyup(function(event){
+			if (event.which === 68) {
+				colorIndex = colorIndex === 4 ? 0 : colorIndex + 1;	
+			}
+			if (event.which === 65) {
+				colorIndex = colorIndex === 0 ? 4 : colorIndex - 1;
+			}
+			GAME.randomColor();
+			event.preventDefault();
+		});
+	}
+
+	function completeHtml(){
+		jQuery("#timeOut").hide();
+		jQuery("#complete").show();
+		jQuery("#score").html("Score: " + GAME.player.scoreLastGame);
 	}
 
 	function randomColor() {
@@ -30,15 +49,16 @@ window.GAME = function() {
 
 	return {
 		settings: {
+
 			height: 600,
 			width: 800,
 			numShapes: 2,
 			scoreMod: 0.3,
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
-			baseColor: "#ddd",	
-			timePerShape: 3000,
-			timePerColor: 500,
+			baseColor: "rgba(0,0,0,.4)",	
+			timePerShape: 40000,
+			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
 		},
@@ -51,7 +71,11 @@ window.GAME = function() {
 		init: function () {
 			GAME.player.init();
 			//Call random color to get the first color
-			randomColor();
+			(function randomColorTimer () {
+				colorIndex = getRandomInteger(4);
+				GAME.randomColor();
+				setTimeout(randomColorTimer, GAME.settings.timePerColor);
+			}());
 			jQuerySetEvents();
 			window.VIEW.showScreenStart();
 		},
@@ -72,7 +96,7 @@ window.GAME = function() {
 			GAME.timer.toggle();
 			this.settings.numShapes += this.settings.addedShapesPerLevel;
 			GAME.player.completeLevel(GAME.timer.getCurrentTime());
-			window.VIEW.showLayerComplete(GAME.player.score);
+			window.VIEW.showLayerComplete(GAME.player.scoreLastGame);
 		},
 
 		getCurrentColor: function() {
@@ -80,7 +104,11 @@ window.GAME = function() {
 				hover: window.GAME.settings.hoverColors[colorIndex], 
 				active: window.GAME.settings.colors[colorIndex]
 			}
-		}
+		},
+
+		randomColor: function () {
+			window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
+		},
 	}
 }();
 

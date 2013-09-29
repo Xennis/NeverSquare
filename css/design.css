@@ -2,6 +2,10 @@
 	font-family: 'Offside', cursive;
 }
 
+body {
+	background-color: #333;
+}
+
 button {
 	margin: 15px 2px 5px 2px;
 	padding: 2px 10px;
@@ -11,16 +15,25 @@ button {
 }
 
 #start_screen, #timeOut, #complete {
-	background-color: black;
-	opacity: 0.8;
+	background-color: rgba(255,255,255, 0.8);
 	border-radius: 20px;
 	text-align: center;
 	padding: 50px;
-	color: white;
 	padding: 50px;
 }
 
 #sidebar #colorPreview {
 	background-color: #eee;
-	border-radius: 30px;
+	border-radius: 5px;
+}
+
+#sidebar {
+	background-image: url('../img/NeverSquareSidebarl.png');
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+#canvas_container {
+	background-image: url('../img/NeverSquareFullGamebackground2.png');
+	background-repeat: no-repeat;
 }

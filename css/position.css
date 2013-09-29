@@ -4,7 +4,7 @@
 
 #wrap {
 	margin: 0 auto;
-	width: 1050px;
+	width: 1160px;
 }
 
 #canvas_container {
@@ -12,19 +12,47 @@
 	height: 600px;
 	border: 1px black solid;
 	float: left;
+	margin-right: 9px;
 }
 
 #sidebar {
-	width: 249px;
+	width: 350px;
 	height: 600px;
 	float: left;
 	padding-left: 10px;
+	position: relative;
+}
+
+#sidebar #gameTime {
+	position: absolute;
+	bottom: 40px;
+	left: 50px;
+}
+
+#sidebar #levelNumber {
+	position: absolute;
+	top: 250px;
+	right: 80px;
+}
+
+#sidebar #scoreNumber {
+	position: absolute;
+	left: 150px;
+	bottom: 150px;
+}
+
+#sidebar #playerName {
+	position: absolute;
+	left: 200px;
+	top: 50px;
 }
 
 #sidebar #colorPreview {
-	width: 100px;
-	height: 100px;
-	margin: 5px auto;
+	position: absolute;
+	width: 132px;
+	height: 59px;
+	left: 185px;
+	top: 154px;
 }
 
 #overlay {
@@ -37,8 +65,13 @@
 	display: none;
 }
 
-#start_screen, #timeOut, #complete{
+#timeOut, #complete{
 	width: 300px;
 	height: 300px;
 	margin: 50px auto;
+}
+
+#start_screen {
+	margin: 50px auto;
+	width: 800px;
 }

@@ -10,6 +10,54 @@
     <!-- title -->
 	<title>Darkside</title>
 
+	<!-- style sheets -->
+
+	<link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+	<link href='css/position.css' rel='stylesheet' type='text/css'>	
+	<link href='css/design.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+	<div id="wrap">
+
+		<!-- start screen -->
+		<div id="start_screen">
+			<img src="img/NeverSquareSplash.png">
+			<h1>Welcome</h1>
+			<input type="text" id="playerName" placeholder="Your Name" required />
+			<button id="start">Start</button>
+		</div>
+
+		<!-- play screen -->
+		<div id="play_screen">	
+			<div id="canvas_container"></div>
+			<div id="sidebar">
+				<div id="colorPreview"></div>
+				<span id="gameTime"></span>
+				<span id="levelNumber"></span>
+				| Shapes: <span id="shapesNumber"></span>
+				<span id="scoreNumber"></span>
+				<span id="playerName"></span>
+			</div>
+		</div>
+
+		<!-- overlayer -->
+		<div id="overlay">
+			<div id="timeOut">
+				<span class="message"><h2>Time out</h2></span>
+				<button id="restart">Restart</button>
+			</div>
+			<div id="complete">
+				<h2>Well done!</h2>
+				<p><span class="message"></span></p>
+				<span id="score"></span>
+				<button id="nextLevel">Next Level</button>
+			</div>
+		</div>
+
+	</div>
+
 	<!-- javascript libary -->
 	<script type="text/javascript" src="js/libs/jquery.js"></script>
 	<script type="text/javascript" src="js/libs/jquery.timer.js"></script>
@@ -29,52 +77,5 @@
 	<script type="text/javascript" src="js/game/timer.js"></script>
 	<script type="text/javascript" src="js/darkside.js"></script>
 
-	<!-- style sheets -->
-	<link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
-	<link href='css/position.css' rel='stylesheet' type='text/css'>	
-	<link href='css/design.css' rel='stylesheet' type='text/css'>
-
-</head>
-
-<body>
-
-	<div id="wrap">
-
-		<!-- start screen -->
-		<div id="start_screen">
-			<h1>Welcome</h1>
-			<input type="text" id="playerName" placeholder="Your Name" required />
-			<button id="start">Start</button>
-		</div>
-
-		<!-- play screen -->
-		<div id="play_screen">	
-			<div id="canvas_container"></div>
-			<div id="sidebar">
-				<div id="colorPreview"></div>
-				Time: <span id="gameTime"></span>
-				| Level: <span id="levelNumber"></span>
-				| Shapes: <span id="shapesNumber"></span>
-				| Scores: <span id="scoreNumber"></span>
-				| Name: <span id="playerName"></span>
-			</div>
-		</div>
-
-		<!-- overlayer -->
-		<div id="overlay">
-			<div id="timeOut">
-				<span class="message"><h2>Time out</h2></span>
-				<button id="restart">Restart</button>
-			</div>
-			<div id="complete">
-				<h2>Well done!</h2>
-				<p><span class="message"></span></p>
-				<span id="score"></span>
-				<button id="nextLevel">Next Level</button>
-			</div>
-		</div>
-
-	</div>
 </body>
-
 </html>

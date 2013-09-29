@@ -3,6 +3,7 @@ GAME.player = function() {
 	var name;
 	var level;
 	var score;
+	var scoreLastGame;
 	var tries;
 
 	return {
@@ -17,7 +18,8 @@ GAME.player = function() {
 		},
 
 		completeLevel: function(time) {
-			this.score = time * GAME.settings.numShapes * GAME.settings.scoreMod;
+			this.scoreLastGame = time * GAME.settings.numShapes * GAME.settings.scoreMod;
+			this.score += this.scoreLastGame; 
 			this.level++;
 			this.tries = 0;
 	        window.VIEW.updateSidebarPlayer(this.name, this.level, GAME.settings.numShapes, this.score);

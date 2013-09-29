@@ -33,6 +33,7 @@ GAME.board = (function (jQuery){
 
 	return {
 		buildBoard: function () {
+			board = [];
 			var canvas = document.getElementById("canvas_container");
 			jQuery("#canvas_container").html("");
 			var xlength = 800, ylength = 600; 
@@ -43,7 +44,7 @@ GAME.board = (function (jQuery){
 			jQuery.each(board, function(index, svgString){
 					var shape = paper.path(svgString);
 					shape.isCorrect = false;
-					shape.attr({fill: GAME.settings.baseColor});
+					shape.attr({fill: GAME.settings.baseColor, stroke: "#fff"});
 					shape.filler = new PathColourFiller(
 							shape, 
 							window.GAME.getCurrentColor, 
@@ -72,7 +73,6 @@ GAME.board = (function (jQuery){
 			});
 
 			//check global
-			
 			paper.forEach(function (shape) {
 				boardCorrect = boardCorrect && shape.isCorrect;
 			});
