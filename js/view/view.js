@@ -61,7 +61,7 @@ window.VIEW = function() {
 		},
 
 		updateSidebarColorPreview: function(color) {
-			jQuery("#colorPreview").css("background-color", color);
+			jQuery("#colorPreview #current").css("background-color", color);
 		},
 
 		updateSidebarTime: function(time) {
