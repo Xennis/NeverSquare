@@ -16,6 +16,7 @@ window.VIEW = function() {
 		// ------ layer -------
 		hideLayer: function() {
 			jQuery("#overlay").hide().val;
+			jQuery("#tutorial").hide().val;
 		},
 
 		showLayerTimeout: function(){
@@ -29,6 +30,20 @@ window.VIEW = function() {
 			jQuery("#timeOut").hide();
 			jQuery("#complete").show();
 			jQuery("#score").text("Score: " + numScores);
+		},
+
+		showTutorialLayer: function(){
+			jQuery("#overlay").show();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").show();
+		},
+
+		hideTutorialLayer: function(){
+			jQuery("#overlay").hide();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").hide();
 		},
 
 		// ------ sidebar (play screen) -------
