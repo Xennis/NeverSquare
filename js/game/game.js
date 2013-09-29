@@ -16,7 +16,7 @@ window.GAME = function() {
 		// Tutorial buttons
 		jQuery("#startTutorial").click(function(event){
 			window.GAME.timer.toggle();
-			window.VIEW.showTutorialLayer();
+			window.VIEW.showTutorialLayer(window.GAME.settings.timePerColor/1000);
 		}),
 
 		jQuery("#endTutorial").click(function(event){
@@ -29,7 +29,7 @@ window.GAME = function() {
 			GAME.start();
 		});
 		jQuery("#colorPreview").click(function(){
-			GAME.randomColor();
+			
 		});
 		jQuery("body").keyup(function(event){
 			event.preventDefault();
@@ -42,6 +42,15 @@ window.GAME = function() {
 		jQuery("#score").html("Score: " + GAME.player.scoreLastGame);
 	}
 
+<<<<<<< HEAD
+	function randomColor() {
+		colorIndex = getRandomColorIndex();
+		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
+		setTimeout(randomColor, GAME.settings.timePerColor);
+	}
+
+=======
+>>>>>>> 5935959538d57ccfd8f0ab55f53a59722d884f81
 	return {
 		settings: {
 
@@ -52,7 +61,7 @@ window.GAME = function() {
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "rgba(0,0,0,.4)",	
-			timePerShape: 1000,
+			timePerShape: 5000,
 			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
@@ -68,9 +77,17 @@ window.GAME = function() {
 			GAME.colorlist.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
+<<<<<<< HEAD
+				colorIndex = getRandomColorIndex();
+				GAME.randomColor();
+=======
 				GAME.colorlist.setNextColor();
+>>>>>>> 5935959538d57ccfd8f0ab55f53a59722d884f81
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
-				window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
+				window.VIEW.updateSidebarColorPreview(
+					GAME.colorlist.getCurrentColor().active, 
+					GAME.colorlist.getNextColor().active
+				);
 			}());
 			jQuerySetEvents();
 			window.VIEW.showScreenStart();
@@ -98,10 +115,6 @@ window.GAME = function() {
 
 		getCurrentColor: function() {
 			return GAME.colorlist.getCurrentColor();
-		},
-
-		randomColor: function () {
-			window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		},
 	}
 }();
