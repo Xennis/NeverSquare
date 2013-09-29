@@ -25,11 +25,13 @@ window.VIEW = function() {
 			jQuery("#timeOut").show();
 		},
 
-		showLayerComplete: function(numScores){
+		showLayerComplete: function(numLevel, numShapes, numScores){
 			jQuery("#overlay").show();
 			jQuery("#timeOut").hide();
 			jQuery("#complete").show();
-			jQuery("#score").text("Score: " + numScores);
+			jQuery('#complete #levelNumber').text("Level: " + numLevel);
+			jQuery('#complete #shapesNumber').text("Shapes: " + numShapes);
+			jQuery("#complete #score").text("Score: " + numScores);
 		},
 
 		showTutorialLayer: function(){
@@ -47,11 +49,12 @@ window.VIEW = function() {
 		},
 
 		// ------ sidebar (play screen) -------
-		updateSidebarPlayer: function(name, numLevel, numShapes, numScores) {
+		updateSidebarPlayer: function(name, numLevel, numScores, numTries) {
 			jQuery('#play_screen #playerName').text(name);
 			jQuery('#levelNumber').text(numLevel);
-			jQuery('#shapesNumber').text(numShapes);
+//			jQuery('#shapesNumber').text(numShapes);
 			jQuery('#scoreNumber').text(numScores);
+			jQuery('#triesNumber').text(numTries);
 		},
 
 		updateSidebarColorPreview: function(color) {
