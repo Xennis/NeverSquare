@@ -90,6 +90,8 @@ window.GAME = function() {
 		timeOut: function (){
 			var losePoints = GAME.player.failLevel();
 			window.VIEW.showLayerTimeout(losePoints);
+			
+			GAME.scorelist.checkHighScore(GAME.player.getName(), GAME.player.getScore());
 		},
 
 		completeLevel: function () {
@@ -97,6 +99,8 @@ window.GAME = function() {
 			GAME.player.completeLevel(GAME.timer.getCurrentTime());
 			window.VIEW.showLayerComplete(GAME.player.level, GAME.settings.numShapes, GAME.player.scoreLastGame);
 			this.settings.numShapes += this.settings.addedShapesPerLevel;
+
+			GAME.scorelist.checkHighScore(GAME.player.getName(), GAME.player.getScore());
 		},
 
 		getCurrentColor: function() {

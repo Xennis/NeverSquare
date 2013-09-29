@@ -9,7 +9,7 @@ GAME.player = function() {
 	return {
 
 		init: function(name) {
-			this.name = name;
+			this.name = name || "Unknown!";
 			this.level = 0;
 			this.score = 0;
 			this.tries = 0;
@@ -45,6 +45,13 @@ GAME.player = function() {
 
 		updateView: function() {
 	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);	
+		},
+
+		getName: function(){
+			return this.name;
+		},
+		getScore: function(){
+			return this.score;
 		}
 	}
 }();
