@@ -1,6 +1,6 @@
 GAME.scorelist = (function (window, jQuery) {
 
-    var location = "scores.php";
+    var location = "php/scores.php";
 
     return {
         getScoreList: function(callback) {
@@ -9,7 +9,7 @@ GAME.scorelist = (function (window, jQuery) {
             });
         },
         saveScore: function(name, score, callback) {
-            $.post(location, {"name":"player","score":100}, function(data) {
+            $.post(location, {"name":name,"score":score}, function(data) {
                 callback(data);
             }, "json");
         }
