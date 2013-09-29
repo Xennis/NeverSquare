@@ -103,8 +103,6 @@ var VoronoiDemo = {
 			}
 		}
 
-	//console.log(shapeArray);
-
 		return shapeArray;
 	},
 };

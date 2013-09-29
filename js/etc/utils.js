@@ -1,3 +1,5 @@
+var lastRandomInteger;
+
 function makeArrayset(arr, key) {
 	var seen = {};
 	return arr.filter(function(elem) {
@@ -8,4 +10,14 @@ function makeArrayset(arr, key) {
 
 function getRandomInteger(max) {
 	return Math.floor(Math.random() * (max + 1));
+}
+
+function getRandomColorIndex() {
+	newRandomInteger = getRandomInteger(100) % 3;
+	if (newRandomInteger == lastRandomInteger) {
+
+	}
+
+	lastRandomInteger = newRandomInteger;
+	return newRandomInteger;
 }
