@@ -7,5 +7,5 @@ function makeArrayset(arr, key) {
 }
 
 function getRandomInteger(max) {
-	return Math.floor(Math.random() * (max));
+	return Math.floor(Math.random() * (max + 1));
 }

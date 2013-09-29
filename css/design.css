@@ -14,7 +14,7 @@ button {
 	border-radius: 20px;
 }
 
-#start_screen, #timeOut, #complete {
+#start_screen, #timeOut, #complete, #tutorial {
 	background-color: rgba(255,255,255, 0.8);
 	border-radius: 20px;
 	text-align: center;
@@ -22,14 +22,29 @@ button {
 	padding: 50px;
 }
 
+#sidebar #scoreNumber {
+	font-size: 35px;
+	text-align: center;
+}
+
+#sidebar #gameTime {
+	font-size: 40px;
+	text-align: center;
+}
+
 #sidebar #colorPreview {
 	background-color: #eee;
 	border-radius: 5px;
 }
 
+#sidebar #triesNumber {
+	font-size: 25px;
+}
+
 #sidebar {
 	background-image: url('../img/NeverSquareSidebarl.png');
 	background-repeat: no-repeat;
+	font-size: 25px;
 	color: #fff;
 }
 

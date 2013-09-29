@@ -25,26 +25,46 @@
 
 #sidebar #gameTime {
 	position: absolute;
-	bottom: 40px;
-	left: 50px;
+
+	
+	left: 103px;
+
+	bottom: 30px;
+	/*left: 50px;*/
+	/*width: 100%;*/
+
 }
 
 #sidebar #levelNumber {
 	position: absolute;
-	top: 250px;
-	right: 80px;
+	top: 245px;
+	right: 50px;
+	width: 75px;
+	text-align: center;
+	
 }
 
 #sidebar #scoreNumber {
 	position: absolute;
-	left: 150px;
-	bottom: 150px;
+	left: 95px;
+	bottom: 126px;
+	width: 175px;
 }
+
 
 #sidebar #playerName {
 	position: absolute;
 	left: 200px;
-	top: 50px;
+	top: 60px;
+	width:125px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#sidebar #triesNumber {
+	position: absolute;
+	left: 177px;
+	top: 346px;
 }
 
 #sidebar #colorPreview {

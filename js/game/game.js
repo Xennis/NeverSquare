@@ -15,6 +15,16 @@ window.GAME = function() {
 			window.VIEW.showScreenPlay();
 			GAME.start();
 		});
+		// Tutorial buttons
+		jQuery("#startTutorial").click(function(event){
+			window.GAME.timer.toggle();
+			window.VIEW.showTutorialLayer();
+		}),
+
+		jQuery("#endTutorial").click(function(event){
+			window.VIEW.hideTutorialLayer();
+			window.GAME.timer.toggle();
+		});
 		// next level button
 		jQuery("#nextLevel").click(function(event){
 			window.VIEW.hideLayer();
@@ -42,7 +52,7 @@ window.GAME = function() {
 	}
 
 	function randomColor() {
-		colorIndex = getRandomInteger(4);
+		colorIndex = getRandomInteger(3);
 		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
@@ -82,6 +92,7 @@ window.GAME = function() {
 		},
 
 		start: function () {
+			GAME.player.nextLevel();
 			GAME.timer.resetTimer();
 		    this.board.buildBoard();
 		    GAME.timer.toggle();
@@ -95,9 +106,9 @@ window.GAME = function() {
 
 		completeLevel: function () {
 			GAME.timer.toggle();
-			this.settings.numShapes += this.settings.addedShapesPerLevel;
 			GAME.player.completeLevel(GAME.timer.getCurrentTime());
-			window.VIEW.showLayerComplete(GAME.player.scoreLastGame);
+			window.VIEW.showLayerComplete(GAME.player.level, GAME.settings.numShapes, GAME.player.scoreLastGame);
+			this.settings.numShapes += this.settings.addedShapesPerLevel;
 		},
 
 		getCurrentColor: function() {

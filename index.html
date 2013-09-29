@@ -11,10 +11,10 @@
 	<title>Darkside</title>
 
 	<!-- style sheets -->
-
 	<link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
 	<link href='css/position.css' rel='stylesheet' type='text/css'>	
 	<link href='css/design.css' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -36,10 +36,12 @@
 				<div id="colorPreview"></div>
 				<span id="gameTime"></span>
 				<span id="levelNumber"></span>
-				| Shapes: <span id="shapesNumber"></span>
 				<span id="scoreNumber"></span>
 				<span id="playerName"></span>
+				<button id="startTutorial">Tutorial</button>
+				<span id="triesNumber"></span>
 			</div>
+			
 		</div>
 
 		<!-- overlayer -->
@@ -50,9 +52,16 @@
 			</div>
 			<div id="complete">
 				<h2>Well done!</h2>
+				<p><span id="levelNumber"></span></p>
+				<p><span id="shapesNumber"></span></p>
 				<p><span class="message"></span></p>
 				<span id="score"></span>
 				<button id="nextLevel">Next Level</button>
+			</div>
+			<div id="tutorial">
+				<h2>This is a tutorial.</h2>
+				<p><span class="message"></span></p>
+				<button id="endTutorial">Done</button>
 			</div>
 		</div>
 
