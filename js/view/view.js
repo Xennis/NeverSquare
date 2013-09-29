@@ -60,8 +60,9 @@ window.VIEW = function() {
 			jQuery('#triesNumber').text(numTries);
 		},
 
-		updateSidebarColorPreview: function(color) {
-			jQuery("#colorPreview #current").css("background-color", color);
+		updateSidebarColorPreview: function(currentColor, nextColor) {
+			jQuery("#colorPreview #currentColor").css("background-color", currentColor);
+			jQuery("#colorPreview #nextColor").css("background-color", nextColor);
 		},
 
 		updateSidebarTime: function(time) {
