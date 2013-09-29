@@ -37,11 +37,12 @@ window.VIEW = function() {
 			jQuery("#tutorial").hide();
 		},
 
-		showTutorialLayer: function(){
+		showTutorialLayer: function(timePerColor){
 			jQuery("#overlay").show();
 			jQuery("#timeOut").hide();
 			jQuery("#complete").hide();
 			jQuery("#tutorial").show();
+			jQuery("#timePerColor").text(timePerColor);
 		},
 
 		hideTutorialLayer: function(){

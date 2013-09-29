@@ -16,7 +16,7 @@ window.GAME = function() {
 		// Tutorial buttons
 		jQuery("#startTutorial").click(function(event){
 			window.GAME.timer.toggle();
-			window.VIEW.showTutorialLayer();
+			window.VIEW.showTutorialLayer(window.GAME.settings.timePerColor/1000);
 		}),
 
 		jQuery("#endTutorial").click(function(event){
