@@ -24,6 +24,7 @@ window.VIEW = function() {
 			jQuery("#complete").hide();
 			jQuery("#timeOut").show();
 			jQuery("#tutorial").hide();
+			jQuery("#highscore").hide();
 			jQuery('#timeOut #losePoints').text("Lose points: " + losePoints);
 		},
 
@@ -35,6 +36,7 @@ window.VIEW = function() {
 			jQuery('#complete #shapesNumber').text("Shapes: " + numShapes);
 			jQuery("#complete #score").text("Score: " + numScores);
 			jQuery("#tutorial").hide();
+			jQuery("#highscore").hide();
 		},
 
 		showTutorialLayer: function(timePerColor){
@@ -42,6 +44,7 @@ window.VIEW = function() {
 			jQuery("#timeOut").hide();
 			jQuery("#complete").hide();
 			jQuery("#tutorial").show();
+			jQuery("#highscore").hide();
 			jQuery("#timePerColor").text(timePerColor);
 		},
 
@@ -50,6 +53,31 @@ window.VIEW = function() {
 			jQuery("#timeOut").hide();
 			jQuery("#complete").hide();
 			jQuery("#tutorial").hide();
+			jQuery("#highscore").hide();
+		},
+
+		showHighscoreLayer: function(scoreList){
+			var highscore = jQuery("#highscore");
+			jQuery.each(scoreList, function(index, score){
+				var playerSpan = "<span id=\"p"+(index+1)+"\" class=\"player\">"+ score.name+"</span>";
+				var scoreSpan = "<span id=\"s"+(index+1)+"\" class=\"score\">"+ score.score+"</span>";
+				highscore.html(playerSpan);
+				highscore.html(scoreSpan);
+			});
+			
+			jQuery("#overlay").show();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").hide();
+			jQuery("#highscore").show();
+		},
+
+		hideHighscoreLayer: function(){
+			jQuery("#overlay").hide();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").hide();
+			jQuery("#highscore").hide();
 		},
 
 		// ------ sidebar (play screen) -------

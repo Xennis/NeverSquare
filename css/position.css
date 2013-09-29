@@ -47,7 +47,7 @@ svg {
 #sidebar #levelNumber {
 	position: absolute;
 	top: 245px;
-	right: 50px;
+	right: 40px;
 	width: 75px;
 	text-align: center;
 }
@@ -100,9 +100,15 @@ svg {
 
 #sidebar #startTutorial {
 	position: absolute;
-	left: 225px;
-	top: 90px;
+	left: 260px;
+	top: 92px;
 
+}
+
+#sidebar #showHighscore{
+	position: absolute;
+	left: 173px;
+	top:90px;
 }
 
 #overlay {
@@ -127,7 +133,67 @@ svg {
 	margin: 50px auto;
 }
 
+#highscore{
+	position: relative;
+	width: 400px;
+	height: 425px;
+	margin: 50px auto;
+}
+
 #start_screen {
 	margin: 50px auto;
 	width: 800px;
 }
+
+#highscore #endHighscore{
+	position:absolute;
+	right:27px;
+	bottom:119px;
+}
+
+.player{
+	position:absolute;
+	right:830px;
+}
+
+.score{
+	position:absolute;
+	right:730px;
+}
+
+#p1, #s1{
+	top:155px;
+}
+
+#p2, #s2{
+	top:190px;
+}
+
+#p3, #s3{
+	top:225px;
+}
+
+#p4, #s4{
+	top:255px;
+}
+
+#p5, #s5{
+	top:285px;
+}
+
+#p6, #s6{
+	top:310px;
+}
+#p7, #s7{
+	top:340px;
+}
+#p8, #s8{
+	top:368px;
+}
+#p9, #s9{
+	top:398px;
+}
+#p10, #s10{
+	top:430px;
+}
+

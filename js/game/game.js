@@ -23,6 +23,17 @@ window.GAME = function() {
 			window.VIEW.hideTutorialLayer();
 			window.GAME.timer.toggle();
 		});
+		//Highscore buttons
+		jQuery("#showHighscore").click(function(event){
+			window.GAME.timer.toggle();
+			GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
+		});
+
+		jQuery("#endHighscore").click(function(event){
+			window.VIEW.hideHighscoreLayer();
+			window.GAME.timer.toggle();
+		});
+
 		// next level button
 		jQuery("#nextLevel").click(function(event){
 			window.VIEW.hideLayer();
