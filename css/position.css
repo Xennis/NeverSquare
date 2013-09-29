@@ -25,14 +25,8 @@
 
 #sidebar #gameTime {
 	position: absolute;
-
-	
 	left: 103px;
-
 	bottom: 30px;
-	/*left: 50px;*/
-	/*width: 100%;*/
-
 }
 
 #sidebar #levelNumber {
@@ -41,7 +35,6 @@
 	right: 50px;
 	width: 75px;
 	text-align: center;
-	
 }
 
 #sidebar #scoreNumber {
@@ -57,7 +50,6 @@
 	left: 200px;
 	top: 60px;
 	width:125px;
-	text-align: center;
 	overflow: hidden;
 }
 
@@ -94,7 +86,7 @@
 #sidebar #startTutorial {
 	position: absolute;
 	left: 225px;
-	top: 85px;
+	top: 90px;
 
 }
 

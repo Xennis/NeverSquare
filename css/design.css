@@ -26,6 +26,11 @@ button {
 	text-align: center;
 }
 
+#sidebar #playerName{
+	font-size: 15px;
+	text-align: center;
+}
+
 #sidebar #gameTime {
 	font-size: 40px;
 	text-align: center;
@@ -66,9 +71,17 @@ button {
 	height:48px;
 }
 
-#start{
+#start, #endTutorial{
 	background-image: url('../img/play.png');
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
+}
+
+#sidebar #startTutorial{
+	background-image: url('../img/realtutorial.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+
 }
