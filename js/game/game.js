@@ -42,15 +42,6 @@ window.GAME = function() {
 		jQuery("#score").html("Score: " + GAME.player.scoreLastGame);
 	}
 
-<<<<<<< HEAD
-	function randomColor() {
-		colorIndex = getRandomColorIndex();
-		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
-		setTimeout(randomColor, GAME.settings.timePerColor);
-	}
-
-=======
->>>>>>> 5935959538d57ccfd8f0ab55f53a59722d884f81
 	return {
 		settings: {
 
@@ -77,12 +68,7 @@ window.GAME = function() {
 			GAME.colorlist.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
-<<<<<<< HEAD
-				colorIndex = getRandomColorIndex();
-				GAME.randomColor();
-=======
 				GAME.colorlist.setNextColor();
->>>>>>> 5935959538d57ccfd8f0ab55f53a59722d884f81
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
 				window.VIEW.updateSidebarColorPreview(
 					GAME.colorlist.getCurrentColor().active, 
