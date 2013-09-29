@@ -23,6 +23,7 @@ window.VIEW = function() {
 			jQuery("#overlay").show();
 			jQuery("#complete").hide();
 			jQuery("#timeOut").show();
+			jQuery("#tutorial").hide();
 		},
 
 		showLayerComplete: function(numLevel, numShapes, numScores){
@@ -32,6 +33,7 @@ window.VIEW = function() {
 			jQuery('#complete #levelNumber').text("Level: " + numLevel);
 			jQuery('#complete #shapesNumber').text("Shapes: " + numShapes);
 			jQuery("#complete #score").text("Score: " + numScores);
+			jQuery("#tutorial").hide();
 		},
 
 		showTutorialLayer: function(){
