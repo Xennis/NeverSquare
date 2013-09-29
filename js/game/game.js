@@ -30,7 +30,6 @@ window.GAME = function() {
 			if (event.which === 65) {
 				colorIndex = colorIndex === 0 ? 4 : colorIndex - 1;
 			}
-			console.log(colorIndex);
 			GAME.randomColor();
 			event.preventDefault();
 		});
@@ -108,7 +107,7 @@ window.GAME = function() {
 		},
 
 		randomColor: function () {
-    		jQuery("#colorPreview").css("background-color", GAME.getCurrentColor().active);
+			window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		},
 	}
 }();
