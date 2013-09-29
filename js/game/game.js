@@ -52,7 +52,7 @@ window.GAME = function() {
 	}
 
 	function randomColor() {
-		colorIndex = getRandomInteger(3);
+		colorIndex = getRandomColorIndex();
 		window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		setTimeout(randomColor, GAME.settings.timePerColor);
 	}
@@ -67,7 +67,7 @@ window.GAME = function() {
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "rgba(0,0,0,.4)",	
-			timePerShape: 1000,
+			timePerShape: 5000,
 			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
@@ -82,7 +82,7 @@ window.GAME = function() {
 			GAME.player.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
-				colorIndex = getRandomInteger(4);
+				colorIndex = getRandomColorIndex();
 				GAME.randomColor();
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
 			}());
