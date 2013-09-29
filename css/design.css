@@ -78,6 +78,10 @@ button {
 	height:48px;
 }
 
+#start:hover, #endTutorial:hover {
+	background-image: url('../img/play_hover.png');
+}
+
 #sidebar #startTutorial{
 	background-image: url('../img/realtutorial.png');
 	background-repeat: no-repeat;

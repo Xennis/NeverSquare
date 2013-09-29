@@ -31,6 +31,12 @@ svg {
 	position: relative;
 }
 
+#playerName {
+	font-size: 23px;
+	position: relative;
+	top: -11px;
+}
+
 #sidebar #gameTime {
 	position: absolute;
 	left: 103px;
