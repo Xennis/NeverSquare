@@ -23,9 +23,11 @@ button {
 
 #highscore{
 	background-image: url('../img/highscore.png');
+	
+	background-repeat: no-repeat;
 	color:#fff;
-	padding: 50px;
-	padding: 50px;
+	width:400px;
+	height:600px;
 }
 
 #sidebar #scoreNumber {
@@ -97,10 +99,14 @@ button {
 }
 
 #sidebar #showHighscore{
-background-image: url('../img/realtutorial.png');
+	background-image: url('../img/highscorebutton.png');
 	background-repeat: no-repeat;
 	width:89px;
 	height:48px;
+}
+
+#endHighscore{
+	background-color: #fff;
 }
 
 

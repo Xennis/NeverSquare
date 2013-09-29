@@ -104,6 +104,12 @@ svg {
 
 }
 
+#sidebar #showHighscore{
+	position: absolute;
+	left: 180px;
+	top:90px;
+}
+
 #overlay {
 	position: absolute;
 	width: 100%;
