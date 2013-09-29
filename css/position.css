@@ -91,6 +91,13 @@
 	height: 59px;
 }
 
+#sidebar #startTutorial {
+	position: absolute;
+	left: 225px;
+	top: 85px;
+
+}
+
 #overlay {
 	position: absolute;
 	width: 100%;
@@ -104,6 +111,12 @@
 #timeOut, #complete{
 	width: 300px;
 	height: 300px;
+	margin: 50px auto;
+}
+
+#tutorial{
+	width: 300px;
+	height: 375px;
 	margin: 50px auto;
 }
 
