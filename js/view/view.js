@@ -37,11 +37,12 @@ window.VIEW = function() {
 			jQuery("#tutorial").hide();
 		},
 
-		showTutorialLayer: function(){
+		showTutorialLayer: function(timePerColor){
 			jQuery("#overlay").show();
 			jQuery("#timeOut").hide();
 			jQuery("#complete").hide();
 			jQuery("#tutorial").show();
+			jQuery("#timePerColor").text(timePerColor);
 		},
 
 		hideTutorialLayer: function(){
@@ -60,8 +61,9 @@ window.VIEW = function() {
 			jQuery('#triesNumber').text(numTries);
 		},
 
-		updateSidebarColorPreview: function(color) {
-			jQuery("#colorPreview #current").css("background-color", color);
+		updateSidebarColorPreview: function(currentColor, nextColor) {
+			jQuery("#colorPreview #currentColor").css("background-color", currentColor);
+			jQuery("#colorPreview #nextColor").css("background-color", nextColor);
 		},
 
 		updateSidebarTime: function(time) {

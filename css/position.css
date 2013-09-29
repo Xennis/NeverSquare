@@ -67,7 +67,7 @@
 	top: 346px;
 }
 
-#sidebar #colorPreview {
+#colorPreview {
 	position: absolute;
 	width: 132px;
 	height: 59px;
@@ -75,10 +75,27 @@
 	top: 154px;
 }
 
+#colorPreview #currentColor {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 110px;
+	height: 59px;
+}
+
+#colorPreview #nextColor {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 21px;
+	height: 59px;
+}
+
 #sidebar #startTutorial {
 	position: absolute;
 	left: 225px;
 	top: 85px;
+
 }
 
 #overlay {

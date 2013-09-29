@@ -16,7 +16,7 @@ window.GAME = function() {
 		// Tutorial buttons
 		jQuery("#startTutorial").click(function(event){
 			window.GAME.timer.toggle();
-			window.VIEW.showTutorialLayer();
+			window.VIEW.showTutorialLayer(window.GAME.settings.timePerColor/1000);
 		}),
 
 		jQuery("#endTutorial").click(function(event){
@@ -29,7 +29,7 @@ window.GAME = function() {
 			GAME.start();
 		});
 		jQuery("#colorPreview").click(function(){
-			GAME.randomColor();
+			
 		});
 		jQuery("body").keyup(function(event){
 			event.preventDefault();
@@ -84,7 +84,10 @@ window.GAME = function() {
 				GAME.colorlist.setNextColor();
 >>>>>>> 5935959538d57ccfd8f0ab55f53a59722d884f81
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
-				window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
+				window.VIEW.updateSidebarColorPreview(
+					GAME.colorlist.getCurrentColor().active, 
+					GAME.colorlist.getNextColor().active
+				);
 			}());
 			jQuerySetEvents();
 			window.VIEW.showScreenStart();
@@ -112,10 +115,6 @@ window.GAME = function() {
 
 		getCurrentColor: function() {
 			return GAME.colorlist.getCurrentColor();
-		},
-
-		randomColor: function () {
-			window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		},
 	}
 }();
