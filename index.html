@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
 
     <!-- title -->
-	<title>Darkside</title>
+	<title>Darkside - NeverSquare</title>
+	<meta name="description"  content="NeverSquare">
 
 	<!-- style sheets -->
 	<link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
@@ -33,21 +34,23 @@
 		<div id="play_screen">	
 			<div id="canvas_container"></div>
 			<div id="sidebar">
-				<div id="colorPreview"></div>
+				<div id="colorPreview">
+					<div id="currentColor"></div>
+					<div id="nextColor"></div>
+				</div>
 				<span id="gameTime"></span>
 				<span id="levelNumber"></span>
 				<span id="scoreNumber"></span>
 				<span id="playerName"></span>
-				<button id="startTutorial">Tutorial</button>
 				<span id="triesNumber"></span>
 			</div>
-			
 		</div>
 
 		<!-- overlayer -->
 		<div id="overlay">
 			<div id="timeOut">
 				<span class="message"><h2>Time out</h2></span>
+				<p><span id="losePoints"></span></p>			
 				<button id="restart">Restart</button>
 			</div>
 			<div id="complete">
@@ -57,11 +60,6 @@
 				<p><span class="message"></span></p>
 				<span id="score"></span>
 				<button id="nextLevel">Next Level</button>
-			</div>
-			<div id="tutorial">
-				<h2>This is a tutorial.</h2>
-				<p><span class="message"></span></p>
-				<button id="endTutorial">Done</button>
 			</div>
 		</div>
 
@@ -78,7 +76,8 @@
 	<script type="text/javascript" src="js/etc/utils.js"></script>
 	<script type="text/javascript" src="js/view/view.js"></script>
 	<script type="text/javascript" src="js/game/game.js"></script>
-	<script type="text/javascript" src="js/game/player.js"></script>	
+	<script type="text/javascript" src="js/game/player.js"></script>
+	<script type="text/javascript" src="js/game/colorlist.js"></script>	
 	<script type="text/javascript" src="js/PathNeighbourFinder.js"></script>
 	<script type="text/javascript" src="js/PathColourFiller.js"></script>
 	<script type="text/javascript" src="js/shapeMaker.js"></script>
