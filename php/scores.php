@@ -59,7 +59,7 @@ function insertScore($name, $score) {
 	$returnValue = new stdClass();
 	$returnValue->result = false;
 
-	if (!empty($name) && (strlen($name) < 30) && !empty($score)) {
+	if (!empty($name) && (strlen($name) <= 20) && !empty($score)) {
 		$sql = "INSERT INTO neversquare_scores
 					VALUES ('$name', $score)";
 		$returnValue->result = mysql_query($sql);
