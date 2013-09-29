@@ -29,7 +29,7 @@ window.GAME = function() {
 			GAME.start();
 		});
 		jQuery("#colorPreview").click(function(){
-			GAME.randomColor();
+			
 		});
 		jQuery("body").keyup(function(event){
 			event.preventDefault();
@@ -70,7 +70,10 @@ window.GAME = function() {
 			(function randomColorTimer () {
 				GAME.colorlist.setNextColor();
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
-				window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
+				window.VIEW.updateSidebarColorPreview(
+					GAME.colorlist.getCurrentColor().active, 
+					GAME.colorlist.getNextColor().active
+				);
 			}());
 			jQuerySetEvents();
 			window.VIEW.showScreenStart();
@@ -98,10 +101,6 @@ window.GAME = function() {
 
 		getCurrentColor: function() {
 			return GAME.colorlist.getCurrentColor();
-		},
-
-		randomColor: function () {
-			window.VIEW.updateSidebarColorPreview(GAME.getCurrentColor().active);
 		},
 	}
 }();
