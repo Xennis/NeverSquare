@@ -36,7 +36,7 @@ GAME.board = (function (jQuery){
 			board = [];
 			var canvas = document.getElementById("canvas_container");
 			jQuery("#canvas_container").html("");
-			var xlength = 800, ylength = 600; 
+			var xlength = 784, ylength = 584; 
 			paper = Raphael(canvas, xlength, ylength);
 
 			shapes = VoronoiDemo.generateShapes();
@@ -65,11 +65,10 @@ GAME.board = (function (jQuery){
 			var neighbours = finder.getNeighbours(clickedItem);
 			
 			clickedItem.isCorrect = checkNeighbours(clickedItem);
-			console.log("current:" + clickedItem.isCorrect);
+			
 			//check neighbours of neighbours
 			jQuery.each(neighbours, function(index, shape) {
 				shape.isCorrect = checkNeighbours(shape);
-				console.log(shape.isCorrect);
 			});
 
 			//check global
@@ -79,7 +78,6 @@ GAME.board = (function (jQuery){
 			if(boardCorrect === true){
 				GAME.completeLevel();
 			}
-			console.log("board:" + boardCorrect);
 		},
 		resetBoard: function(){
 			paper.forEach(function(element){

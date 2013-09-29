@@ -27,7 +27,7 @@
 			<img src="img/NeverSquareSplash.png">
 			<h1>Welcome</h1>
 			<input type="text" id="playerName" placeholder="Your Name" required />
-			<button id="start">Start</button>
+			<button id="start"></button>
 		</div>
 
 		<!-- play screen -->
@@ -43,7 +43,7 @@
 				<span id="scoreNumber"></span>
 				<span id="playerName"></span>
 				<span id="triesNumber"></span>
-				<button id="startTutorial">Tutorial</button>
+				<button id="startTutorial"></button>
 			</div>
 		</div>
 
@@ -52,25 +52,27 @@
 			<div id="timeOut">
 				<span class="message"><h2>Time out</h2></span>
 				<p><span id="losePoints"></span></p>			
-				<button id="restart">Restart</button>
+				<button id="restart"></button>
 			</div>
 			<div id="complete">
 				<h2>Well done!</h2>
 				<p><span id="levelNumber"></span></p>
 				<p><span id="shapesNumber"></span></p>
 				<p><span class="message"></span></p>
-				<span id="score"></span>
-				<button id="nextLevel">Next Level</button>
+				<p><span id="score"></span></p>
+				<button id="nextLevel"></button>
 			</div>
 			<div id="tutorial">
 				<h2>How to Play</h2>
-				<p>Color each shape in the shape map above. Don't let any two shapes that share an edge have the same color.</p>
+				<p>Color each shape in the shape map. Don't let any two shapes that share an edge have the same color!</p>
 
-				<p>A random color is available for selection for <span id="timePerColor"></span> second. You can see which color is active in the color window.</p>
+				<p>A random color is available for selection for <span id="timePerColor"></span> second. In the color box, the currently active color is shown on the left. The smaller color on the right is a preview of the next color.</p>
+
+				<p>Score is determined by the current level and time to completion. Points are subtracted if a level is timed out before it is completed.</p>
 
 				<p>NB: It is ok for two shapes that share a single point to be the same color. </p>
 				<p><span class="message"></span></p>
-				<button id="endTutorial">Done</button>
+				<button id="endTutorial"></button>
 			</div>
 		</div>
 
