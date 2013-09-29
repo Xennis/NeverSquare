@@ -26,11 +26,10 @@ window.GAME = function() {
 		//Highscore buttons
 		jQuery("#showHighscore").click(function(event){
 			window.GAME.timer.toggle();
-			//GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
-			window.VIEW.showHighscoreLayer(0);
+			GAME.scorelist.getScoreList(window.VIEW.showHighscoreLayer);
 		});
 
-		jQuery("#hideHighscore").click(function(event){
+		jQuery("#endHighscore").click(function(event){
 			window.VIEW.hideHighscoreLayer();
 			window.GAME.timer.toggle();
 		});

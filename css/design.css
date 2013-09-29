@@ -23,10 +23,13 @@ button {
 
 #highscore{
 	background-image: url('../img/highscore.png');
-	
+	background-size: 300px auto;
 	background-repeat: no-repeat;
+	text-align: center;
 	color:#fff;
-	width:400px;
+	padding:50px;
+	padding:50px;
+	width:300px;
 	height:600px;
 }
 
@@ -87,7 +90,7 @@ button {
 	height:48px;
 }
 
-#start:hover, #endTutorial:hover {
+#start:hover, #endTutorial:hover, #endHighscore {
 	background-image: url('../img/play_hover.png');
 }
 
@@ -106,7 +109,11 @@ button {
 }
 
 #endHighscore{
-	background-color: #fff;
+	background-image: url('../img/play.png');
+	background-repeat: no-repeat;
+	width:89px;
+	height:48px;
+
 }
 
 
