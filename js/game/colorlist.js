@@ -12,7 +12,7 @@ GAME.colorlist = (function (window, jQuery) {
                 setTimeout(generateColors, GAME.settings.timePerColor);
             })();
         },
-        current: function () {
+        getCurrentColor: function () {
             if (colorPointer > 5) {
                 colors.splice(0, 5);
                 colorPointer = 0;
@@ -29,11 +29,11 @@ GAME.colorlist = (function (window, jQuery) {
                 });
         },
 
-        next: function () {
+        getNextColor: function () {
             return colors[colorPointer+1];
         },
 
-        nextColor: function () {
+        setNextColor: function () {
             if (colorPointer+1 >= colors.length)
                 return false;
             colorPointer += 1;

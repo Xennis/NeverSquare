@@ -85,6 +85,7 @@ window.GAME = function() {
 			(function randomColorTimer () {
 				colorIndex = getRandomInteger(4);
 				GAME.randomColor();
+				GAME.colorlist.setNextColor();
 				setTimeout(randomColorTimer, GAME.settings.timePerColor);
 			}());
 			jQuerySetEvents();
@@ -112,6 +113,8 @@ window.GAME = function() {
 		},
 
 		getCurrentColor: function() {
+			console.log(GAME.colorlist.getCurrentColor());
+			console.log(GAME.colorlist.getNextColor());
 			return {
 				hover: window.GAME.settings.hoverColors[colorIndex], 
 				active: window.GAME.settings.colors[colorIndex]
