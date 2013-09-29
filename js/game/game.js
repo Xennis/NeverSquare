@@ -94,9 +94,9 @@ window.GAME = function() {
 
 		completeLevel: function () {
 			GAME.timer.toggle();
-			this.settings.numShapes += this.settings.addedShapesPerLevel;
 			GAME.player.completeLevel(GAME.timer.getCurrentTime());
-			window.VIEW.showLayerComplete(GAME.player.scoreLastGame);
+			window.VIEW.showLayerComplete(GAME.player.level, GAME.settings.numShapes, GAME.player.scoreLastGame);
+			this.settings.numShapes += this.settings.addedShapesPerLevel;
 		},
 
 		getCurrentColor: function() {

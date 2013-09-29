@@ -27,6 +27,10 @@ button {
 	border-radius: 5px;
 }
 
+#sidebar #triesNumber {
+	font-size: 25px;
+}
+
 #sidebar {
 	background-image: url('../img/NeverSquareSidebarl.png');
 	background-repeat: no-repeat;

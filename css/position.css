@@ -47,6 +47,12 @@
 	top: 50px;
 }
 
+#sidebar #triesNumber {
+	position: absolute;
+	left: 177px;
+	top: 347px;
+}
+
 #sidebar #colorPreview {
 	position: absolute;
 	width: 132px;

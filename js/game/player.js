@@ -14,7 +14,7 @@ GAME.player = function() {
 			this.score = 0;
 			this.tries = 0;
 
-	        window.VIEW.updateSidebarPlayer(this.name, this.level, GAME.settings.numShapes, this.score);
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
 		},
 
 		completeLevel: function(time) {
@@ -22,11 +22,12 @@ GAME.player = function() {
 			this.score += this.scoreLastGame; 
 			this.level++;
 			this.tries = 0;
-	        window.VIEW.updateSidebarPlayer(this.name, this.level, GAME.settings.numShapes, this.score);
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
 		},
 
 		failLevel: function() {
 			this.tries++;
+	        window.VIEW.updateSidebarPlayer(this.name, this.level, this.score, this.tries);
 		}
 	}
 }();
