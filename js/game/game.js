@@ -15,6 +15,16 @@ window.GAME = function() {
 			window.VIEW.showScreenPlay();
 			GAME.start();
 		});
+		// Tutorial buttons
+		jQuery("#startTutorial").click(function(event){
+			window.GAME.timer.toggle();
+			window.VIEW.showTutorialLayer();
+		}),
+
+		jQuery("#endTutorial").click(function(event){
+			window.VIEW.hideTutorialLayer();
+			window.GAME.timer.toggle();
+		});
 		// next level button
 		jQuery("#nextLevel").click(function(event){
 			window.VIEW.hideLayer();

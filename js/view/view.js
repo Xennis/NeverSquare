@@ -16,12 +16,14 @@ window.VIEW = function() {
 		// ------ layer -------
 		hideLayer: function() {
 			jQuery("#overlay").hide().val;
+			jQuery("#tutorial").hide().val;
 		},
 
 		showLayerTimeout: function(){
 			jQuery("#overlay").show();
 			jQuery("#complete").hide();
 			jQuery("#timeOut").show();
+			jQuery("#tutorial").hide();
 		},
 
 		showLayerComplete: function(numLevel, numShapes, numScores){
@@ -31,6 +33,21 @@ window.VIEW = function() {
 			jQuery('#complete #levelNumber').text("Level: " + numLevel);
 			jQuery('#complete #shapesNumber').text("Shapes: " + numShapes);
 			jQuery("#complete #score").text("Score: " + numScores);
+			jQuery("#tutorial").hide();
+		},
+
+		showTutorialLayer: function(){
+			jQuery("#overlay").show();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").show();
+		},
+
+		hideTutorialLayer: function(){
+			jQuery("#overlay").hide();
+			jQuery("#timeOut").hide();
+			jQuery("#complete").hide();
+			jQuery("#tutorial").hide();
 		},
 
 		// ------ sidebar (play screen) -------

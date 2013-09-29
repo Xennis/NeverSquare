@@ -14,7 +14,7 @@ button {
 	border-radius: 20px;
 }
 
-#start_screen, #timeOut, #complete {
+#start_screen, #timeOut, #complete, #tutorial {
 	background-color: rgba(255,255,255, 0.8);
 	border-radius: 20px;
 	text-align: center;
