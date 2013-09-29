@@ -9,16 +9,17 @@ mysql_connect($config_DBserver, $config_DBuser, $config_DBpassword) or die ("sdf
 mysql_select_db($config_DBname) or die ("sdsd");
 mysql_set_charset('utf8');
 
-$post_json = $_POST["save_score"];
-if ( !empty($post_json)) {
-	insertScoreJson($post_json);
-}
+//$post_json = $_POST["name"];
+//if ( !empty($post_json)) {
+//	insertScoreJson($post_json);
+//}
 
-$get_json = $_GET["ssadsad"];
-if ( !empty($get_json)) {
-	getHighscore();
+if ($_SERVER['REQUEST_METHOD'] === "GET") {
+	echo getHighscore();
 } 
-
+else if ($_SERVER['REQUEST_METHOD'] === "POST") {
+	echo insertScore($_POST["name"], $_POST["score"]);
+} 
 
 /**
  * Get highscores
@@ -45,20 +46,27 @@ function getHighscore() {
 	return json_encode($highscores);
 }
 
-function insertScoreJson($json) {
-	insertScore($json->{'name'}, $json->{'score'});
-}
+//function insertScoreJson($json) {
+//	insertScore($json->{'name'}, $json->{'score'});
+//}
 
+/**
+ * Insert new score
+ *
+ * @param string name Player name
+ * @param integer score Player score
+ * @return JSON object true / false
+ */
 function insertScore($name, $score) {
+	$returnValue = new stdClass();
+	$returnValue->result = false;
+
 	if (!empty($name) && !empty($score)) {
 		$sql = "INSERT INTO neversquare_scores
 					VALUES ('$name', $score)";
-		$result = mysql_query($sql);
-		return $result;	
+		$returnValue->result = mysql_query($sql);
+		//return $result;	
 	}
-	mysql_free_result($result);
-	return false;
+	return json_encode($returnValue);
 }
-
-
 ?>
