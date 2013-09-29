@@ -67,7 +67,7 @@ window.GAME = function() {
 			colors: new Array("#6495ed", "#8b0000", "#9ACD32", "#ffa500"),
 			hoverColors: new Array("#CAE1FF", "#CD0000", "#adff2f","#FFD700"),
 			baseColor: "rgba(0,0,0,.4)",	
-			timePerShape: 40000,
+			timePerShape: 1000,
 			timePerColor: 1000,
 			incrementTime: 70,
 			addedShapesPerLevel: 2,
@@ -99,8 +99,8 @@ window.GAME = function() {
 
 
 		timeOut: function (){
-			GAME.player.failLevel();
-			window.VIEW.showLayerTimeout();
+			var losePoints = GAME.player.failLevel();
+			window.VIEW.showLayerTimeout(losePoints);
 		},
 
 		completeLevel: function () {
