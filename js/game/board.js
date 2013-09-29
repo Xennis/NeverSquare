@@ -44,7 +44,7 @@ GAME.board = (function (jQuery){
 			jQuery.each(board, function(index, svgString){
 					var shape = paper.path(svgString);
 					shape.isCorrect = false;
-					shape.attr({fill: GAME.settings.baseColor});
+					shape.attr({fill: GAME.settings.baseColor, stroke: "#fff"});
 					shape.filler = new PathColourFiller(
 							shape, 
 							window.GAME.getCurrentColor, 
