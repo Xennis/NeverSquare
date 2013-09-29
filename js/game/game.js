@@ -70,6 +70,7 @@ window.GAME = function() {
 
 		init: function () {
 			GAME.player.init();
+			GAME.colorlist.init();
 			//Call random color to get the first color
 			(function randomColorTimer () {
 				colorIndex = getRandomInteger(4);
