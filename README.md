@@ -1,13 +1,13 @@
 # NeverSquare by Darkside
 
-![neversquare_logo](img/NeverSquareSplash)
+![neversquare_logo](img/NeverSquareSplash.png)
 
 ## Project
 
 This game was create in the Sonen Game Jam (http://sonengamejam.org).
 The challenge was to create a game in 24 hours.
 
-Source code: https://bitbucket.org/robert_kolner/darkside
+Source code: http://github.com/Xennis/NeverSquare
 
 ### Used software
 
@@ -20,6 +20,8 @@ JavaScript libaries
 
 ### Demo and screenshots
 
-**Demo**: http://xennis.github.io/DarkSide/
+**Demo**: http://xennis.github.io/NeverSquare/
 
 ![play_win](_screenshots/play_win.png)
+
+![play_win](_screenshots/highscore.png)
