@@ -1,5 +1,4 @@
-*.swp
-*~
+nbproject/
 
 # database connection settings
 config.php
